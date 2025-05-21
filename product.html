@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>步态精灵 - 灵维智驱科技</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <nav id="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">灵维智驱科技</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="product.html" class="active">步态精灵</a></li>
+                    <li><a href="technology.html">技术与研发</a></li>
+                    <li><a href="team.html">团队介绍</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="page-nav-section">
+        <div class="container">
+            <div class="page-nav">
+                <ul>
+                    <li><a href="#product-overview">产品概览</a></li>
+                    <li><a href="#product-features">核心功能</a></li>
+                    <li><a href="#product-specs">产品规格</a></li>
+                    <li><a href="#testimonials">用户见证</a></li>
+                    <li><a href="#product-cta">预约体验</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="product-hero" class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>步态精灵智能跑步姿态分析系统</h1>
+                <p>兼顾损伤预防与表现提升的"双效合一"智能系统</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="product-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>产品概览</h2>
+                <p>软硬件一体化的综合解决方案</p>
+            </div>
+            <div class="product-model-container">                <div id="product-3d-model">
+                    <div class="product-model-wrapper">
+                        <div class="product-model-title">
+                            <h3>步态精灵智能鞋垫</h3>
+                        </div>
+                        <div class="product-model-rotating">
+                            <img src="images/product-3d-view.png" alt="步态精灵3D模型" class="product-3d-img" />
+                        </div>
+                        <div class="model-controls">
+                            <button class="model-btn" id="rotateLeft" title="向左旋转"><i class="fas fa-undo"></i></button>
+                            <button class="model-btn" id="rotateRight" title="向右旋转"><i class="fas fa-redo"></i></button>
+                            <button class="model-btn" id="zoomIn" title="放大"><i class="fas fa-search-plus"></i></button>
+                            <button class="model-btn" id="zoomOut" title="缩小"><i class="fas fa-search-minus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p>步态精灵是一个软硬件一体化的智能跑步姿态分析系统，通过多模态数据融合与边缘-云协同计算，实现了专业级的跑姿分析与指导。</p>
+                    <div class="product-components">
+                        <div class="component-item">
+                            <h3>智能鞋垫</h3>
+                            <p>超薄设计，内置高精度六轴IMU、自主研发柔性压力阵列、主控芯片与无线通信模块</p>
+                        </div>
+                        <div class="component-item">
+                            <h3>移动应用</h3>
+                            <p>支持iOS和Android，提供实时数据显示、可视化分析、语音指导配置等功能</p>
+                        </div>
+                        <div class="component-item">
+                            <h3>云端服务</h3>
+                            <p>基于微服务架构，提供数据存储、深度分析、个性化训练方案生成等服务</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="product-features" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>核心功能详解</h2>
+                <p>全方位解决跑者健康安全与表现提升需求</p>
+            </div>
+            <div class="features-accordion">
+                <div class="feature-tab fade-in">
+                    <div class="feature-header">
+                        <h3>跑姿实时监测与深度分析</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="feature-content" style="display: block;">
+                        <div class="feature-detail">
+                            <div class="feature-image">
+                                <img src="images/feature-gait-analysis.jpg" alt="跑姿监测与分析功能展示">
+                            </div>
+                            <div class="feature-text">
+                                <p>实时采集并计算超过20项专业级跑步参数，包括步频、步幅、触地时间、足内外翻角度等关键生物力学指标。</p>
+                                <p>基于ST-FusionNet模型，高精度识别5种最常见的不良跑姿：过度内翻、过度外翻/内翻不足、后跟过度着地、垂直振动过大、左右不平衡。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                <div class="feature-tab fade-in">
+                    <div class="feature-header">
+                        <h3>智能实时语音/震动指导</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-detail">
+                            <div class="feature-image">
+                                <img src="images/feature-realtime-guidance.jpg" alt="实时指导功能展示">
+                            </div>
+                            <div class="feature-text">
+                                <p>边缘端即时反馈，当识别出预设的跑姿问题或关键参数偏离理想区间时，通过APP触发语音提示或震动反馈。</p>
+                                <p>内置专业级指导语料库，针对不同问题提供清晰、具体、可操作的改进建议。</p>
+                                <p>智能调节反馈频率与强度，根据用户的跑步状态和历史反馈效果动态优化提示体验。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                <div class="feature-tab fade-in">
+                    <div class="feature-header">
+                        <h3>跑姿多维度可视化分析</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-detail">
+                            <div class="feature-image">
+                                <img src="images/feature-visualization.jpg" alt="可视化分析功能展示">
+                            </div>
+                            <div class="feature-text">
+                                <p>动态足底压力热力图：直观展示跑步过程中足底压力的分布、峰值区域和变化趋势。</p>
+                                <p>3D足部姿态重建：基于IMU数据和生物力学模型，重建足部和小腿下段在跑步过程中的关键姿态变化。</p>
+                                <p>关键参数趋势图与对比分析：查看核心参数在单次跑步中的变化或多次跑步间的趋势，量化评估改善效果。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                <div class="feature-tab fade-in">
+                    <div class="feature-header">
+                        <h3>个性化训练方案</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-detail">
+                            <div class="feature-image">
+                                <img src="images/feature-training-plan.jpg" alt="个性化训练方案功能展示">
+                            </div>
+                            <div class="feature-text">
+                                <p>AI驱动的双效评估报告：健康安全维度（姿势问题、风险点、伤病预防）与表现提升维度（经济性分析、力量效率）评估。</p>
+                                <p>AI生成双效训练计划：同时兼顾损伤预防和表现提升两大目标的综合训练方案。</p>
+                                <p>个性化适应性提升曲线：根据用户水平、周跑量、目标、赛事周期和训练适应情况智能调整训练内容。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                <div class="feature-tab fade-in">
+                    <div class="feature-header">
+                        <h3>专业数据管理与社群互动</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-detail">
+                            <div class="feature-image">
+                                <img src="images/feature-data-community.jpg" alt="数据管理与社群功能展示">
+                            </div>
+                            <div class="feature-text">
+                                <p>跑步历史全记录与数据导出：自动保存每一次跑步的详细数据，支持标准格式导出。</p>
+                                <p>跑姿进步可视化追踪与里程碑激励：通过图表展示长期改进趋势，设置里程碑并给予虚拟奖励。</p>
+                                <p>匿名社区分享与专家咨询：选择分享跑姿数据或改进心得，与其他跑者交流经验，可选专业咨询服务。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="product-specs">
+        <div class="container">
+            <div class="section-header">
+                <h2>产品规格与性能</h2>
+                <p>严苛的技术标准，卓越的性能表现</p>
+            </div>
+            <div class="specs-container">
+                <div class="specs-tabs">
+                    <div class="specs-tab active" data-tab="hardware">硬件规格</div>
+                    <div class="specs-tab" data-tab="performance">性能指标</div>
+                </div>
+                <div class="specs-content">
+                    <div class="specs-panel active" id="hardware-specs">
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <h4>适配尺寸</h4>
+                                <p>S/M/L/XL标准尺码，覆盖35-46码（欧码）</p>
+                            </div>
+                            <div class="spec-item">
+                                <h4>单只重量</h4>
+                                <p>约35g±5g（以M码，42码为例）</p>
+                            </div>
+                            <div class="spec-item">
+                                <h4>平均厚度</h4>
+                                <p>主体区域约3.5mm，边缘区域约2-2.5mm</p>
+                            </div>
+                            <div class="spec-item">
+                                <h4>电池容量</h4>
+                                <p>内置300mAh柔性锂聚合物电池</p>
+                            </div>
+                            <div class="spec-item">
+                                <h4>续航能力</h4>
+                                <p>持续工作8-10小时，待机时间可达30天以上</p>
+                            </div>
+                            <div class="spec-item">
+                                <h4>防水等级</h4>
+                                <p>IP67级别，有效抵御汗水浸湿和雨水泼溅</p>
+                            </div>
+                            <div class="spec-item">
+                                <h4>传感器采样率</h4>
+                                <p>IMU: 最高200Hz；足压阵列: 50Hz</p>
+                            </div>
+                            <div class="spec-item">
+                                <h4>传感精度</h4>
+                                <p>加速度计: ±16g量程，分辨率优于0.005g</p>
+                                <p>单点压力分辨率: 0.05N，量程0-50N</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="specs-panel" id="performance-specs">
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <h4>跑姿问题识别准确率</h4>
+                                <p>>92.3%（与VICON三维运动捕捉系统对比验证）</p>
+                            </div>
+                            <div class="spec-item">
+                                <h4>数据处理延迟</h4>
+                                <p><100ms（从传感器捕获到触发反馈）</p>
+                            </div>
+                            <div class="spec-item">
+                                <h4>语音指导有效响应率</h4>
+                                <p>>98.5%（用户理解意图的比例）</p>
+                            </div>
+                            <div class="spec-item">
+                                <h4>用户姿态改善有效性</h4>
+                                <p>80%以上用户在6-12周内至少一项核心指标有积极变化</p>
+                            </div>
+                            <div class="spec-item">
+                                <h4>耐用性</h4>
+                                <p>设计寿命支持500-800公里跑步里程或1年使用</p>
+                            </div>
+                            <div class="spec-item">
+                                <h4>关键参数数量</h4>
+                                <p>超过20项专业级跑步参数实时监测与分析</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>用户见证</h2>
+                <p>真实用户的改善体验与心得分享</p>
+            </div>
+            <div class="testimonials-carousel">                <div class="testimonial-item" aria-hidden="false" tabindex="0">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">作为一名业余马拉松爱好者，我一直被膝盖问题困扰。使用步态精灵三个月后，通过改善我的过度内翻问题，膝盖疼痛明显减轻，完成了半程马拉松的目标。</p>
+                        <div class="testimonial-author">
+                            <div class="placeholder-img">用户头像1</div>
+                            <div class="author-info">
+                                <h4>张先生</h4>
+                                <p>业余跑者，35岁</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-data">
+                        <h4>数据改善</h4>
+                        <div class="data-item">
+                            <span>内翻角度峰值:</span>
+                            <span>从14.2°降至8.5°</span>
+                        </div>
+                        <div class="data-item">
+                            <span>触地冲击力:</span>
+                            <span>减少18.6%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item" aria-hidden="true" tabindex="-1">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">作为一名竞技跑者，我寻找的是能提升表现的工具。步态精灵帮我优化了步频和着地方式，10公里配速提升了近20秒，同时避免了以前常有的胫骨疼痛。</p>
+                        <div class="testimonial-author">
+                            <div class="placeholder-img">用户头像2</div>
+                            <div class="author-info">
+                                <h4>李女士</h4>
+                                <p>竞技跑者，28岁</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-data">
+                        <h4>数据改善</h4>
+                        <div class="data-item">
+                            <span>步频:</span>
+                            <span>从168提升至176步/分</span>
+                        </div>
+                        <div class="data-item">
+                            <span>10公里配速:</span>
+                            <span>从4'10"/km提升至3'52"/km</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="product-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>开启您的科学跑步之旅</h2>
+                <p>步态精灵让每一步都更安全、高效，助您实现运动目标</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">预约体验</a>
+                    <a href="technology.html" class="btn btn-outline">了解技术详情</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="product-data-viz" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>产品性能数据</h2>
+                <p>科学化的数据呈现，直观了解产品实力</p>
+            </div>
+            <div class="charts-container">
+                <div class="chart-item">
+                    <h3>用户改善效果统计</h3>
+                    <div class="chart-canvas-container">
+                        <canvas id="improvementChart"></canvas>
+                    </div>
+                    <div class="chart-description">
+                        <p>基于500名测试用户在12周内的跑姿改善数据统计</p>
+                    </div>
+                </div>
+                <div class="chart-item">
+                    <h3>产品精度对比</h3>
+                    <div class="chart-canvas-container">
+                        <canvas id="accuracyChart"></canvas>
+                    </div>
+                    <div class="chart-description">
+                        <p>与市场上主流跑姿分析产品的精度对比（实验室测试数据）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>灵维智驱科技</h2>
+                    <p>技术引领未来，智能驱动创新</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>导航</h3>
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="product.html">步态精灵</a></li>
+                            <li><a href="technology.html">技术与研发</a></li>
+                            <li><a href="team.html">团队介绍</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>产品</h3>
+                        <ul>
+                            <li><a href="product.html#overview">产品概览</a></li>
+                            <li><a href="product.html#features">核心功能</a></li>
+                            <li><a href="product.html#specs">产品规格</a></li>
+                            <li><a href="product.html#testimonials">用户见证</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>关注我们</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-icon">微博</a>
+                            <a href="#" class="social-icon">微信</a>
+                            <a href="#" class="social-icon">知乎</a>
+                            <a href="#" class="social-icon">B站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 灵维智驱科技有限公司. 版权所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="scroll-to-top" class="scroll-to-top">
+        <span>↑</span>
+    </div>    <script src="js/main.js"></script>
+    <script src="js/product-model.js"></script>
+    <script src="js/product-charts.js"></script>
+    <script src="js/product-features.js"></script>
+</body>
+</html>

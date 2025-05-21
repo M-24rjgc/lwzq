@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>团队介绍 - 灵维智驱科技</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <nav id="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">灵维智驱科技</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="product.html">步态精灵</a></li>
+                    <li><a href="technology.html">技术与研发</a></li>
+                    <li><a href="team.html" class="active">团队介绍</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="team-hero" class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>跨学科精英团队</h1>
+                <p>融合软件工程、运动科学、硬件研发等多领域专业人才</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="management-team">
+        <div class="container">
+            <div class="section-header">
+                <h2>核心管理团队</h2>
+                <p>拥有深厚理论功底与丰富实践经验的精英领导者</p>
+            </div>
+            <div class="team-members">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="placeholder-img">孟天赐照片</div>
+                    </div>
+                    <div class="member-info">
+                        <h3>孟天赐</h3>
+                        <p class="member-title">CEO & CTO</p>
+                        <div class="member-details">
+                            <p>河南大学软件工程专业，精通算法架构设计、数据分析与系统集成，具备卓越的战略规划和项目管理能力。</p>
+                            <p>蓝桥杯项目实战赛智能体开发省冠，美国大学生数学建模大赛H奖，蓝桥杯软件组python组省一，ACM团队设计天梯赛GPLT国家级奖项。</p>
+                            <div class="member-responsibilities">
+                                <h4>主要职责</h4>
+                                <ul>
+                                    <li>制定公司整体战略规划和业务发展方向</li>
+                                    <li>领导公司核心技术研发和商业模式创新</li>
+                                    <li>统筹资源配置，构建企业文化与价值体系</li>
+                                    <li>主导公司核心技术路线规划与实施</li>
+                                    <li>推动技术创新与产品落地转化</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="placeholder-img">付凌霄照片</div>
+                    </div>
+                    <div class="member-info">
+                        <h3>付凌霄</h3>
+                        <p class="member-title">COO</p>
+                        <div class="member-details">
+                            <p>河南大学软件工程专业，精通AI辅助开发，前端架构设计，产品运营与项目管理。蓝桥杯省一，计算机设计大赛等奖项获得者。</p>
+                            <p>淳阳项目组核心成员，主导多个AI前端项目实施，拥有丰富的项目运营经验。</p>
+                            <div class="member-responsibilities">
+                                <h4>主要职责</h4>
+                                <ul>
+                                    <li>统筹公司日常运营与业务执行</li>
+                                    <li>优化内部流程，提升运营效率</li>
+                                    <li>监督公司战略目标落地执行</li>
+                                    <li>协调市场、产品、支持部门协同工作</li>
+                                    <li>建立标准化绩效评估与激励机制</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="placeholder-img">吴雨泽照片</div>
+                    </div>
+                    <div class="member-info">
+                        <h3>吴雨泽</h3>
+                        <p class="member-title">CFO</p>
+                        <div class="member-details">
+                            <p>财经相关专业背景，系统财务管理培训，擅长财务规划、资金管理、风险控制、投融资分析。</p>
+                            <p>"正大杯"全国大学生市场分析大赛国家三等奖，新工科"人工智能大赛"华中赛区二等奖，"挑战杯"大学生学术科技作品竞赛省级奖项。省级大学生创新创业训练计划核心成员并完成结项。</p>
+                            <div class="member-responsibilities">
+                                <h4>主要职责</h4>
+                                <ul>
+                                    <li>制定财务战略，建立健全财务管理体系</li>
+                                    <li>负责企业资金规划、预算控制与风险管理</li>
+                                    <li>主导投融资决策、财务分析与报告</li>
+                                    <li>优化资源配置，提升企业财务价值</li>
+                                    <li>建立健全财务制度与内控机制</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technical-team" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>技术研发团队</h2>
+                <p>创新引擎的核心驱动力量</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="card-photo">
+                        <div class="placeholder-img">杨瑞熙照片</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>杨瑞熙</h3>
+                        <p class="card-title">全栈开发组负责人</p>
+                        <div class="card-skills">
+                            <h4>专业技能</h4>
+                            <p>前端开发(HTML/CSS/JavaScript/Node.js/AJAX)，Vue2+Vue3+TypeScript，微信小程序开发，数据可视化，Java开发</p>
+                        </div>
+                        <div class="card-experience">
+                            <h4>项目经验</h4>
+                            <p>淳阳项目组核心开发者，负责多个项目架构设计与实现</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="card-photo">
+                        <div class="placeholder-img">彭骋照片</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>彭骋</h3>
+                        <p class="card-title">硬件研发工程师</p>
+                        <div class="card-skills">
+                            <h4>专业技能</h4>
+                            <p>电路设计、芯片选型、PCB绘制、硬件架构设计</p>
+                        </div>
+                        <div class="card-experience">
+                            <h4>项目经验</h4>
+                            <p>淳阳项目组硬件组成员，主导低功耗MCU芯片的选型与应用，解决传感器数据采集稳定性问题</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="card-photo">
+                        <div class="placeholder-img">张心雨照片</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>张心雨</h3>
+                        <p class="card-title">硬件研发工程师</p>
+                        <div class="card-skills">
+                            <h4>专业技能</h4>
+                            <p>机器人设计、智能控制系统、传感器集成应用</p>
+                        </div>
+                        <div class="card-experience">
+                            <h4>项目经验</h4>
+                            <p>第二十六届中国机器人及人工智能大赛国际级优秀奖，第十九届挑战杯"揭榜挂帅"专项赛国家级二等奖，第十九届全国大学生智能车竞赛国家级三等奖</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="card-photo">
+                        <div class="placeholder-img">章晨照片</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>章晨</h3>
+                        <p class="card-title">3D建模组负责人</p>
+                        <div class="card-skills">
+                            <h4>专业技能</h4>
+                            <p>Unity开发、3DMAX建模、UE开发、交互设计</p>
+                        </div>
+                        <div class="card-experience">
+                            <h4>项目经验</h4>
+                            <p>Unity开发者社区创作者、3DMAX 3D游戏社区成员、UE开发者社区创作者</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="card-photo">
+                        <div class="placeholder-img">闫嘉欣照片</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>闫嘉欣</h3>
+                        <p class="card-title">数据分析组负责人</p>
+                        <div class="card-skills">
+                            <h4>专业技能</h4>
+                            <p>数据挖掘、统计分析、SPSS工具应用、多协议后端开发</p>
+                        </div>
+                        <div class="card-experience">
+                            <h4>项目经验</h4>
+                            <p>参与4C赛道人工智能项目，负责核心策划方案设计；物联网应用项目后端开发，实现HTTP与MQTT协议交互集成</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="operations-team">
+        <div class="container">
+            <div class="section-header">
+                <h2>运营支持团队</h2>
+                <p>助力战略落地的关键力量</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="card-photo">
+                        <div class="placeholder-img">李芊羽照片</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>李芊羽</h3>
+                        <p class="card-title">市场销售负责人</p>
+                        <div class="card-skills">
+                            <h4>专业技能</h4>
+                            <p>市场策划、销售管理、公众表达、活动组织</p>
+                        </div>
+                        <div class="card-experience">
+                            <h4>项目经验</h4>
+                            <p>担任河南大学中国国际大学生创新大赛选拔赛活动主持人，中原广告艺术大赛微电影广告赛道脚本策划负责人，获省级优秀奖</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="card-photo">
+                        <div class="placeholder-img">郭忆慧照片</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>郭忆慧</h3>
+                        <p class="card-title">产品经理</p>
+                        <div class="card-skills">
+                            <h4>专业技能</h4>
+                            <p>产品规划、用户研究、需求分析、项目管理</p>
+                        </div>
+                        <div class="card-experience">
+                            <h4>项目经验</h4>
+                            <p>带队参加市场调研大赛获一等奖，具有丰富的用户需求挖掘经验</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="card-photo">
+                        <div class="placeholder-img">武雨晗照片</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>武雨晗</h3>
+                        <p class="card-title">美术设计师</p>
+                        <div class="card-skills">
+                            <h4>专业技能</h4>
+                            <p>3D建模、视觉传达、品牌设计、UI/UX设计</p>
+                        </div>
+                        <div class="card-experience">
+                            <h4>项目经验</h4>
+                            <p>挑战杯参赛经验，中国计算机设计大赛，明德思源杯，淳阳项目组设计组核心成员</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="card-photo">
+                        <div class="placeholder-img">余心琼照片</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>余心琼</h3>
+                        <p class="card-title">人力资源专员</p>
+                        <div class="card-skills">
+                            <h4>专业技能</h4>
+                            <p>人才招聘、团队建设、培训发展、绩效管理</p>
+                        </div>
+                        <div class="card-experience">
+                            <h4>项目经验</h4>
+                            <p>"挑战杯"全国大学生课外学术科技作品竞赛，"挑战杯"中国大学生创业计划竞赛，中国国际"互联网+"大学生创新创业大赛</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="academic-advisors" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>学术顾问团队</h2>
+                <p>提供前瞻性学术引领与技术指导</p>
+            </div>
+            <div class="advisor-wrapper">
+                <div class="advisor">
+                    <div class="advisor-photo">
+                        <div class="placeholder-img">杨晓慧教授照片</div>
+                    </div>
+                    <div class="advisor-info">
+                        <h3>杨晓慧 教授</h3>
+                        <p class="advisor-title">人工智能与算法顾问</p>
+                        <div class="advisor-background">
+                            <h4>学术背景</h4>
+                            <p>博士（西安电子科技大学，模式识别与智能系统），河南大学教授，博士生导师，曾任美国佛罗里达大学、新加坡南洋理工大学访问学者。</p>
+                        </div>
+                        <div class="advisor-research">
+                            <h4>研究领域</h4>
+                            <ul>
+                                <li>智能信息处理与模式识别</li>
+                                <li>问题驱动的数学建模与算法设计</li>
+                                <li>多模态数据智能挖掘与分析</li>
+                                <li>深度学习与计算机视觉</li>
+                            </ul>
+                        </div>
+                        <div class="advisor-contribution">
+                            <h4>对公司贡献</h4>
+                            <p>提供算法优化与人工智能技术前沿指导，助力建立数据驱动的智能决策模型，指导团队构建高效的机器学习框架，支持产学研项目合作与科研成果转化。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advisor">
+                    <div class="advisor-photo">
+                        <div class="placeholder-img">刘海涛副教授照片</div>
+                    </div>
+                    <div class="advisor-info">
+                        <h3>刘海涛 副教授</h3>
+                        <p class="advisor-title">智能硬件与生物力学顾问</p>
+                        <div class="advisor-background">
+                            <h4>学术背景</h4>
+                            <p>博士，河南大学体育学院副教授，硕士生导师，运动人体科学教研室科研秘书。</p>
+                        </div>
+                        <div class="advisor-research">
+                            <h4>研究领域</h4>
+                            <ul>
+                                <li>运动损伤机理与预防</li>
+                                <li>损伤生物力学与运动生物力学</li>
+                                <li>体力活动与健康</li>
+                                <li>生物力学传感器技术与应用</li>
+                            </ul>
+                        </div>
+                        <div class="advisor-contribution">
+                            <h4>对公司贡献</h4>
+                            <p>提供专业的运动产品生物力学设计及性能优化方案，指导构建先进的健康监测与运动数据分析算法模型，为可穿戴设备提供人因工程学优化支持，提升用户体验，协助开展运动健康产品的临床验证与效果评估。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advisor">
+                    <div class="advisor-photo">
+                        <div class="placeholder-img">梁胜彬副教授照片</div>
+                    </div>
+                    <div class="advisor-info">
+                        <h3>梁胜彬 副教授</h3>
+                        <p class="advisor-title">软件工程与大数据顾问</p>
+                        <div class="advisor-background">
+                            <h4>学术背景</h4>
+                            <p>河南大学软件学院副教授，智能服务与精准医疗课题组核心成员。</p>
+                        </div>
+                        <div class="advisor-research">
+                            <h4>研究领域</h4>
+                            <ul>
+                                <li>大数据统计分析与挖掘</li>
+                                <li>服务计算与软件工程</li>
+                                <li>智能系统架构设计</li>
+                                <li>医疗健康数据应用</li>
+                            </ul>
+                        </div>
+                        <div class="advisor-contribution">
+                            <h4>对公司贡献</h4>
+                            <p>为公司提供前瞻性的软件架构设计与系统优化方案，指导构建高效的大数据处理平台，深化数据应用价值，提供高性能计算与分布式系统开发的技术支持与咨询，助力企业实现全面的数字化转型与核心技术升级。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="collaboration-mechanism">
+        <div class="container">
+            <div class="section-header">
+                <h2>协作机制与组织文化</h2>
+                <p>灵活高效的团队协作，创新驱动的企业文化</p>
+            </div>
+            <div class="mechanism-container">
+                <div class="mechanism-visual">
+                    <div class="placeholder-img">团队协作机制示意图</div>
+                </div>
+                <div class="mechanism-content">
+                    <div class="mechanism-section">
+                        <h3>扁平化管理模式</h3>
+                        <p>灵维智驱科技采纳轻量级扁平化管理，缩短决策链、加速信息流通。优化组织层级，激发团队创造力与自主性，培育快速响应的组织文化。</p>
+                    </div>
+                    <div class="mechanism-section">
+                        <h3>跨部门敏捷协作</h3>
+                        <ul>
+                            <li>矩阵式项目组织：针对具体项目灵活组建跨职能团队，高效整合各种资源</li>
+                            <li>敏捷开发方法论：采用Scrum框架，实施短周期迭代、站立会议与回顾会</li>
+                            <li>OKR目标管理：将公司战略分解为可衡量的季度目标，促进自我驱动与成长</li>
+                        </ul>
+                    </div>
+                    <div class="mechanism-section">
+                        <h3>开放式沟通机制</h3>
+                        <ul>
+                            <li>定期会议体系：管理层周会、部门周例会、月度全员会、季度战略会</li>
+                            <li>线上协作平台：集成化协作环境，实现信息实时流转</li>
+                            <li>知识管理系统：促进经验共享与技能沉淀，避免重复开发与错误重复</li>
+                        </ul>
+                    </div>
+                    <div class="mechanism-section">
+                        <h3>创新文化建设</h3>
+                        <ul>
+                            <li>创新实验室制度：设立"20%创新时间"，定期举办创新项目路演</li>
+                            <li>内部孵化机制：对有潜力的创意提供资源支持，建立完整路径</li>
+                            <li>持续学习生态：提供定制化学习路径与资源，支持职业发展</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="join-us" class="bg-light">
+        <div class="container">
+            <div class="join-content">
+                <h2>加入我们，共创未来</h2>
+                <p>我们热忱欢迎各领域优秀人才加入灵维智驱科技团队，一起探索智能科技前沿，实现职业与个人的双重价值</p>
+                <a href="contact.html#careers" class="btn btn-primary">查看招聘岗位</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>灵维智驱科技</h2>
+                    <p>技术引领未来，智能驱动创新</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>导航</h3>
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="product.html">步态精灵</a></li>
+                            <li><a href="technology.html">技术与研发</a></li>
+                            <li><a href="team.html">团队介绍</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>产品</h3>
+                        <ul>
+                            <li><a href="product.html#overview">产品概览</a></li>
+                            <li><a href="product.html#features">核心功能</a></li>
+                            <li><a href="product.html#specs">产品规格</a></li>
+                            <li><a href="product.html#testimonials">用户见证</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>关注我们</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-icon">微博</a>
+                            <a href="#" class="social-icon">微信</a>
+                            <a href="#" class="social-icon">知乎</a>
+                            <a href="#" class="social-icon">B站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 灵维智驱科技有限公司. 版权所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="scroll-to-top" class="scroll-to-top">
+        <span>↑</span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,504 @@
+/* 响应式样式表 - 灵维智驱科技 */
+/* 大型设备（大型桌面显示器，1200px及以上）*/
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    /* 主页特定样式 */
+    #features .feature-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* 产品展示区域 */
+    .product-showcase {
+        padding: 40px;
+    }
+    
+    /* 技术页特定样式 */
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* 团队页特定样式 */
+    .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 中型设备（笔记本电脑/台式机，992px及以上）*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    /* 导航栏 */
+    .nav-toggle {
+        display: none;
+    }
+    
+    /* 主页特定样式 */
+    #features .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    #hero .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    /* 产品展示区域 */
+    .product-showcase {
+        padding: 30px;
+    }
+    
+    /* 技术页特定样式 */
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* 团队页特定样式 */
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 中小型设备（平板电脑，768px及以上）*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    /* 导航栏 */
+    .nav-toggle {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--light-gray);
+        flex-direction: column;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    
+    /* 主页特定样式 */
+    #hero .hero-content {
+        text-align: center;
+    }
+    
+    #hero .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    #features .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .two-column-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* 产品页特定样式 */
+    .product-showcase {
+        flex-direction: column;
+    }
+    
+    .product-image, .product-details {
+        width: 100%;
+    }
+    
+    .product-model-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-tab .feature-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-detail {
+        grid-template-columns: 1fr;
+    }
+    
+    .specs-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .specs-tab {
+        width: 80%;
+        margin-bottom: 10px;
+        border-radius: var(--border-radius) !important;
+        text-align: center;
+    }
+    
+    .specs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonial-item {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 技术页特定样式 */
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* 团队页特定样式 */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 联系页特定样式 */
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form, .contact-info {
+        padding: 2rem;
+    }
+    
+    /* 页面导航 */
+    .page-nav ul {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        white-space: nowrap;
+    }
+    
+    .page-nav li {
+        display: inline-block;
+    }
+}
+
+/* 小型设备（手机，768px以下）*/
+@media (max-width: 767px) {
+    .container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    
+    /* 导航栏 */
+    .nav-toggle {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--light-gray);
+        flex-direction: column;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    
+    /* 主页特定样式 */
+    #hero {
+        padding: 100px 0 50px;
+    }
+    
+    #hero .hero-content {
+        text-align: center;
+    }
+    
+    #hero .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    #hero .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    #features .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .two-column-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* 产品页特定样式 */
+    .product-showcase {
+        flex-direction: column;
+    }
+    
+    .product-image, .product-details {
+        width: 100%;
+    }
+    
+    .product-model-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-tab .feature-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-detail {
+        grid-template-columns: 1fr;
+    }
+    
+    .specs-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .specs-tab {
+        width: 80%;
+        margin-bottom: 10px;
+        border-radius: var(--border-radius) !important;
+        text-align: center;
+    }
+    
+    .specs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonial-item {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-nav {
+        flex-wrap: wrap;
+    }
+    
+    .testimonial-indicators {
+        width: 100%;
+        margin-top: 15px;
+        order: 2;
+    }
+    
+    .testimonial-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    
+    /* 技术页特定样式 */
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 团队页特定样式 */
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-member {
+        margin-bottom: 2rem;
+    }
+    
+    /* 联系页特定样式 */
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form, .contact-info {
+        padding: 1.5rem;
+    }
+    
+    /* 页脚样式 */
+    footer .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    footer .footer-column {
+        margin-bottom: 2rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* 超小设备（小型手机，576px以下）*/
+@media (max-width: 575px) {
+    /* 导航栏 */
+    .logo a {
+        font-size: 1.2rem;
+    }
+    
+    /* 主页特定样式 */
+    #hero .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn {
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .statistic-item {
+        padding: 1rem;
+    }
+    
+    .statistic-number {
+        font-size: 2rem;
+    }
+    
+    /* 产品页特定样式 */
+    .testimonial {
+        padding: 1.5rem;
+    }
+    
+    /* 针对规格部分的特殊适配 */
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .spec-item {
+        padding: 15px;
+    }
+    
+    /* 联系页特定样式 */
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.8rem;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        font-size: 12pt;
+        color: #000;
+        background-color: #fff;
+    }
+    
+    #main-nav, #hero, footer, .cta-buttons, #particle-container {
+        display: none;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    
+    img {
+        max-width: 100% !important;
+    }
+    
+    a {
+        color: #000;
+    }
+    
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-weight: normal;
+    }
+}
+
+/* 产品图表响应式调整 */
+.charts-container {
+    grid-template-columns: 1fr;
+}
+
+.chart-canvas-container {
+    height: 300px;
+}
+
+/* 改进响应式下的产品模型显示 */
+@media screen and (max-width: 992px) {
+    .product-model-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    #product-3d-model {
+        height: 350px;
+    }
+    
+    .product-model-rotating {
+        height: 200px;
+    }
+    
+    .product-3d-img {
+        width: 70%;
+    }
+    
+    .model-controls {
+        margin-top: 15px;
+    }
+    
+    .component-item {
+        padding: 15px;
+    }
+}
+
+/* 小型设备（横向手机，768px以下）*/
+@media (max-width: 767px) {
+    /* 产品展示区域 */
+    .product-showcase {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .product-image, .product-info {
+        width: 100%;
+    }
+    
+    .product-actions {
+        flex-direction: column;
+    }
+    
+    .product-actions .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

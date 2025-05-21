@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 灵维智驱科技</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <nav id="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">灵维智驱科技</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="product.html">步态精灵</a></li>
+                    <li><a href="technology.html">技术与研发</a></li>
+                    <li><a href="team.html">团队介绍</a></li>
+                    <li><a href="contact.html" class="active">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="contact-hero" class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>联系灵维智驱科技</h1>
+                <p>我们期待与您沟通交流，共创智能运动科技未来</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-main">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info-block">
+                    <h2>联系方式</h2>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <span>📍</span>
+                            </div>
+                            <div class="contact-text">
+                                <h3>公司地址</h3>
+                                <p>河南省开封市金明大道</p>
+                                <p>灵维科技园 A座 3层</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <span>📞</span>
+                            </div>
+                            <div class="contact-text">
+                                <h3>电话咨询</h3>
+                                <p>+86 1234 5678 90</p>
+                                <p>周一至周五 9:00-18:00</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <span>✉️</span>
+                            </div>
+                            <div class="contact-text">
+                                <h3>邮箱</h3>
+                                <p>contact@lingwei.tech</p>
+                                <p>support@lingwei.tech</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <span>💬</span>
+                            </div>
+                            <div class="contact-text">
+                                <h3>社交媒体</h3>
+                                <div class="social-links-inline">
+                                    <a href="#" class="social-icon">微博</a>
+                                    <a href="#" class="social-icon">微信</a>
+                                    <a href="#" class="social-icon">知乎</a>
+                                    <a href="#" class="social-icon">B站</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-block">
+                    <h2>发送消息</h2>
+                    <p>如果您对步态精灵产品、技术合作或投资机会感兴趣，请填写下方表单，我们会在2个工作日内回复您</p>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">姓名</label>
+                                <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">公司/机构</label>
+                                <input type="text" id="company" name="company" placeholder="请输入您的公司或机构名称">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">电子邮箱</label>
+                                <input type="email" id="email" name="email" placeholder="请输入您的电子邮箱" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">联系电话</label>
+                                <input type="tel" id="phone" name="phone" placeholder="请输入您的联系电话">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">主题</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>请选择您的咨询主题</option>
+                                <option value="product">产品咨询</option>
+                                <option value="tech">技术合作</option>
+                                <option value="investment">投资合作</option>
+                                <option value="career">人才招聘</option>
+                                <option value="other">其他问题</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言内容</label>
+                            <textarea id="message" name="message" rows="5" placeholder="请详细描述您的需求或问题" required></textarea>
+                        </div>
+                        <div class="form-group form-checkbox">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">我已阅读并同意<a href="#">隐私政策</a>，同意贵公司处理我的信息</label>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary">发送信息</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map-section" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>来访路线</h2>
+                <p>欢迎前来参观交流</p>
+            </div>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="placeholder-img">公司地理位置地图</div>
+                </div>
+                <div class="directions">
+                    <div class="direction-item">
+                        <h3><span class="direction-icon">🚗</span> 自驾路线</h3>
+                        <p>导航至"河南大学开元校区"，沿金明大道向北500米即到灵维科技园</p>
+                    </div>
+                    <div class="direction-item">
+                        <h3><span class="direction-icon">🚌</span> 公共交通</h3>
+                        <p>乘坐9路、28路、66路公交车至"河南大学"站下车，向北步行约300米</p>
+                    </div>
+                    <div class="direction-item">
+                        <h3><span class="direction-icon">✈️</span> 高铁/飞机</h3>
+                        <p>开封北站/郑州新郑机场下，可乘坐出租车或联系我们安排接送</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="careers">
+        <div class="container">
+            <div class="section-header">
+                <h2>加入我们</h2>
+                <p>与行业精英一起，共创智能科技未来</p>
+            </div>
+            <div class="careers-content">
+                <div class="careers-intro">
+                    <p>灵维智驱科技是一家充满活力与创新的科技公司，我们致力于将前沿技术转化为改变生活的产品。加入我们，您将有机会：</p>
+                    <ul>
+                        <li>参与突破性产品从0到1的创造过程</li>
+                        <li>与顶尖的技术专家和行业领袖共同工作</li>
+                        <li>享受扁平化管理与开放创新的企业文化</li>
+                        <li>获得有竞争力的薪资与全面的福利待遇</li>
+                        <li>拥有广阔的职业发展空间与自我提升机会</li>
+                    </ul>
+                </div>
+                <div class="job-listings">
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>嵌入式软件工程师</h3>
+                            <span class="job-type">全职</span>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-requirements">
+                                <h4>岗位要求</h4>
+                                <ul>
+                                    <li>计算机、电子、通信等相关专业本科及以上学历</li>
+                                    <li>熟悉C/C++编程，有嵌入式软件开发经验</li>
+                                    <li>熟悉ESP32、ARM等平台的开发</li>
+                                    <li>了解常见传感器接口及数据处理流程</li>
+                                </ul>
+                            </div>
+                            <div class="job-benefits">
+                                <h4>岗位福利</h4>
+                                <ul>
+                                    <li>有竞争力的薪资与年终奖金</li>
+                                    <li>五险一金，补充商业保险</li>
+                                    <li>弹性工作制，定期团建活动</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" class="job-apply btn btn-outline">申请岗位</a>
+                    </div>
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>机器学习算法工程师</h3>
+                            <span class="job-type">全职</span>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-requirements">
+                                <h4>岗位要求</h4>
+                                <ul>
+                                    <li>人工智能、计算机科学等相关专业硕士及以上学历</li>
+                                    <li>熟悉深度学习框架TensorFlow或PyTorch</li>
+                                    <li>有多模态数据处理或时序数据分析经验优先</li>
+                                    <li>了解模型压缩、边缘计算相关技术</li>
+                                </ul>
+                            </div>
+                            <div class="job-benefits">
+                                <h4>岗位福利</h4>
+                                <ul>
+                                    <li>业内具有竞争力的薪资与股权激励</li>
+                                    <li>完善的培训与职业发展规划</li>
+                                    <li>学术会议与技术交流机会</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" class="job-apply btn btn-outline">申请岗位</a>
+                    </div>
+                    <div class="job-card">
+                        <div class="job-header">
+                            <h3>产品运营专员</h3>
+                            <span class="job-type">全职</span>
+                        </div>
+                        <div class="job-details">
+                            <div class="job-requirements">
+                                <h4>岗位要求</h4>
+                                <ul>
+                                    <li>市场营销、传媒等相关专业本科及以上学历</li>
+                                    <li>对智能硬件或运动健康行业有浓厚兴趣</li>
+                                    <li>具备良好的文案策划与执行能力</li>
+                                    <li>有社区运营或用户增长经验者优先</li>
+                                </ul>
+                            </div>
+                            <div class="job-benefits">
+                                <h4>岗位福利</h4>
+                                <ul>
+                                    <li>有竞争力的薪资与绩效奖金</li>
+                                    <li>完善的福利保障与职业培训</li>
+                                    <li>开放创新的工作环境</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" class="job-apply btn btn-outline">申请岗位</a>
+                    </div>
+                </div>
+                <div class="careers-note">
+                    <p>除上述岗位外，我们也欢迎各领域优秀人才的加入。如您对灵维智驱科技感兴趣，可将简历发送至 <a href="mailto:hr@lingwei.tech">hr@lingwei.tech</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见问题</h2>
+                <p>我们整理了一些常见问题的解答</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>步态精灵与普通运动手环/手表有什么区别？</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>普通运动手环/手表主要监测心率、步数、配速等基础数据，而步态精灵通过足底的压力阵列与IMU传感器，能够捕捉更丰富的生物力学参数，如足底压力分布、内外翻角度、着地方式等，为跑步姿态分析提供更专业、更全面的数据支持，并能针对不良跑姿提供实时指导。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>步态精灵适合什么级别的跑者使用？</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>步态精灵适合各级别的跑者使用。对于初级跑者，可以帮助建立良好的跑步姿势习惯，预防伤病发生；对于中高级跑者，可以提供更专业的数据分析，优化跑步经济性，提升运动表现。产品内置的训练方案会根据用户的跑步水平自动调整难度和内容。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>步态精灵的电池续航如何？</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>步态精灵内置300mAh高能量密度锂聚合物电池，在标准使用场景下（IMU 200Hz，足压50Hz，蓝牙持续连接与数据传输），可持续工作8-10小时，满足绝大多数单次跑步需求（包括全程马拉松）。深度休眠模式下待机时间可达30天以上。支持Qi标准无线充电，充满电约需1.5小时。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>步态精灵是否支持与其他运动平台数据互通？</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>是的，步态精灵支持数据导出与同步。目前已支持与Strava、Garmin Connect等主流运动平台的数据同步，未来将开放更多平台的接入。用户也可以导出标准格式的数据文件，用于个人分析或与教练分享。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>如何保障数据的安全性与隐私？</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我们非常重视用户数据安全与隐私保护。所有数据传输均采用TLS/SSL加密；云端存储的个人身份信息采用AES-256加密；我们严格执行"最小化采集"原则，仅收集必要的数据；用户可随时查阅、导出或删除个人数据；我们遵守《网络安全法》、GDPR等相关法律法规。详情可参阅我们的隐私政策。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>灵维智驱科技</h2>
+                    <p>技术引领未来，智能驱动创新</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>导航</h3>
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="product.html">步态精灵</a></li>
+                            <li><a href="technology.html">技术与研发</a></li>
+                            <li><a href="team.html">团队介绍</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>产品</h3>
+                        <ul>
+                            <li><a href="product.html#overview">产品概览</a></li>
+                            <li><a href="product.html#features">核心功能</a></li>
+                            <li><a href="product.html#specs">产品规格</a></li>
+                            <li><a href="product.html#testimonials">用户见证</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>关注我们</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-icon">微博</a>
+                            <a href="#" class="social-icon">微信</a>
+                            <a href="#" class="social-icon">知乎</a>
+                            <a href="#" class="social-icon">B站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 灵维智驱科技有限公司. 版权所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="scroll-to-top" class="scroll-to-top">
+        <span>↑</span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

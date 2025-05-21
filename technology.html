@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术与研发 - 灵维智驱科技</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <nav id="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">灵维智驱科技</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="product.html">步态精灵</a></li>
+                    <li><a href="technology.html" class="active">技术与研发</a></li>
+                    <li><a href="team.html">团队介绍</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="tech-hero" class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>前沿科技，创新研发</h1>
+                <p>深度融合运动生物力学、多模态数据融合和边缘-云协同计算</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="research-background">
+        <div class="container">
+            <div class="section-header">
+                <h2>研发背景</h2>
+                <p>解决健康安全与运动表现提升的双重挑战</p>
+            </div>
+            <div class="bg-highlights">
+                <div class="stats-card">
+                    <div class="chart-container">
+                        <div class="placeholder-img">跑者损伤率统计图表</div>
+                    </div>
+                    <div class="stats-text">
+                        <h3>损伤高发现状</h3>
+                        <p>每年高达65-80%的跑者遭遇运动损伤，主要集中在膝关节、踝关节和髋部</p>
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <div class="chart-container">
+                        <div class="placeholder-img">跑步经济性提升图表</div>
+                    </div>
+                    <div class="stats-text">
+                        <h3>表现提升空间</h3>
+                        <p>优化跑步姿态可提升5-8%的跑步经济性，或在相同速度下降低能量消耗</p>
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <div class="chart-container">
+                        <div class="placeholder-img">现有解决方案对比图表</div>
+                    </div>
+                    <div class="stats-text">
+                        <h3>现有方案局限</h3>
+                        <p>专业教练视觉评估主观性强，实验室设备昂贵且场地受限，消费级设备功能有限</p>
+                    </div>
+                </div>
+            </div>
+            <div class="theory-foundation">
+                <h3>三大理论基础</h3>
+                <div class="theory-grid">
+                    <div class="theory-item">
+                        <div class="theory-icon">
+                            <div class="placeholder-img">运动生物力学图标</div>
+                        </div>
+                        <h4>运动生物力学</h4>
+                        <p>研究人体运动时的受力情况、能量消耗、动作效率及损伤机制，为跑姿评估与优化提供理论依据</p>
+                    </div>
+                    <div class="theory-item">
+                        <div class="theory-icon">
+                            <div class="placeholder-img">多模态数据融合图标</div>
+                        </div>
+                        <h4>多模态数据融合理论</h4>
+                        <p>通过融合IMU的时序运动学数据与足压阵列的空间动力学数据，获取更全面、更鲁棒的跑姿信息</p>
+                    </div>
+                    <div class="theory-item">
+                        <div class="theory-icon">
+                            <div class="placeholder-img">边缘-云协同计算图标</div>
+                        </div>
+                        <h4>边缘-云协同计算理论</h4>
+                        <p>边缘端负责实时数据处理与反馈，云端承担复杂模型训练与个性化方案生成，实现资源优化配置</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="core-technologies" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>核心技术详解</h2>
+                <p>领先的算法设计与硬件集成实现专业级跑姿分析</p>
+            </div>
+            <div class="tech-sections">
+                <div class="tech-section">
+                    <h3>ST-FusionNet：多模态时空融合神经网络</h3>
+                    <div class="tech-content">
+                        <div class="tech-visual">
+                            <div class="placeholder-img">ST-FusionNet架构图</div>
+                        </div>
+                        <div class="tech-description">
+                            <p>ST-FusionNet是我们针对跑步这一特定运动场景，自主研发的深度学习神经网络模型。其核心目标是有效融合IMU提供的时序运动学数据和足压阵列提供的空间动力学数据，以实现对复杂跑姿模式的高精度识别与评估。</p>
+                            <h4>网络架构特点</h4>
+                            <ul>
+                                <li>并行的双分支输入结构，分别处理IMU时序数据和足压空间数据</li>
+                                <li>创新的注意力融合机制，动态分配不同模态数据在不同跑步阶段的权重</li>
+                                <li>多任务学习输出层，同时进行跑姿分类与关键参数回归预测</li>
+                            </ul>
+                            <h4>技术创新点</h4>
+                            <ul>
+                                <li>跑步周期感知的时变注意力权重调节机制</li>
+                                <li>基于领域知识的特征工程与筛选嵌入</li>
+                                <li>数据增强与迁移学习的结合训练策略</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-section">
+                    <h3>精密多模态传感器融合系统</h3>
+                    <div class="tech-content">
+                        <div class="tech-visual">
+                            <div class="placeholder-img">传感器系统工作原理图</div>
+                        </div>
+                        <div class="tech-description">
+                            <p>我们设计并集成了一个包含六轴IMU和自主研发的柔性足压阵列的传感器系统，实现对足部运动学与动力学参数的全面捕捉。</p>
+                            <h4>传感器硬件设计</h4>
+                            <ul>
+                                <li>六轴IMU：InvenSense MPU-6500，通过SPI高速总线连接，经过温度补偿校准和六面校准</li>
+                                <li>柔性足压阵列：自主研发的压阻式导电聚合物复合材料传感单元，8x8点阵（共64个传感点）</li>
+                                <li>传感器布局优化：IMU位于前外侧减少干扰，足压阵列覆盖足底主要承重区域</li>
+                            </ul>
+                            <h4>数据处理流程</h4>
+                            <ul>
+                                <li>硬件级时间戳同步，确保不同传感器数据严格对齐</li>
+                                <li>IMU信号预处理：自适应滤波、姿态估算算法</li>
+                                <li>足压数据预处理：噪声滤除、基线校准、坏点检测与插值</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-section">
+                    <h3>边缘-云协同计算架构</h3>
+                    <div class="tech-content">
+                        <div class="tech-visual">
+                            <div class="placeholder-img">边缘-云协同架构图</div>
+                        </div>
+                        <div class="tech-description">
+                            <p>为了在功耗和体积严格受限的智能鞋垫上实现实时、精准的跑姿分析，同时又能利用云端强大的计算资源进行深度学习，我们设计了高效、灵活的边缘-云协同计算架构。</p>
+                            <h4>边缘端处理能力</h4>
+                            <ul>
+                                <li>部署轻量级ST-FusionNet模型，通过量化、剪枝、算子融合等优化</li>
+                                <li>双核并行计算：Core 0负责传感器数据处理，Core 1负责AI推理</li>
+                                <li>实时问题检测与即时响应，延迟控制在100ms以内</li>
+                            </ul>
+                            <h4>云端处理能力</h4>
+                            <ul>
+                                <li>完整版ST-FusionNet与复杂算法运算，提供全面的离线深度分析</li>
+                                <li>基于用户历史数据和目标的个性化深度分析与方案生成</li>
+                                <li>模型持续学习与优化迭代，实现边缘智能的持续进化</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="innovation-highlights">
+        <div class="container">
+            <div class="section-header">
+                <h2>技术创新点凝练</h2>
+                <p>领先的技术突破与独特优势</p>
+            </div>
+            <div class="innovation-grid">
+                <div class="innovation-item">
+                    <div class="innovation-icon">
+                        <div class="placeholder-img">新颖性图标</div>
+                    </div>
+                    <h3>新颖性</h3>
+                    <ul>
+                        <li>首次将边缘-云协同AI架构与多模态传感器深度融合应用于跑姿分析</li>
+                        <li>创新设计的ST-FusionNet模型，针对跑步数据特性的独特融合机制</li>
+                        <li>自主研发的高性能柔性足压阵列传感器制造工艺与标定方法</li>
+                    </ul>
+                </div>
+                <div class="innovation-item">
+                    <div class="innovation-icon">
+                        <div class="placeholder-img">创造性图标</div>
+                    </div>
+                    <h3>创造性</h3>
+                    <ul>
+                        <li>基于步态事件感知的时变注意力权重计算方法</li>
+                        <li>适用于资源受限边缘设备的轻量级深度学习模型优化方案</li>
+                        <li>结合生物力学先验知识与数据驱动的跑姿异常检测算法</li>
+                        <li>解决柔性传感器在动态使用中的信号漂移与耐用性问题</li>
+                    </ul>
+                </div>
+                <div class="innovation-item">
+                    <div class="innovation-icon">
+                        <div class="placeholder-img">实用性图标</div>
+                    </div>
+                    <h3>实用性与价值</h3>
+                    <ul>
+                        <li>解决广大跑者因不良跑姿导致的运动损伤高发问题</li>
+                        <li>降低专业级跑姿分析的技术门槛与费用门槛</li>
+                        <li>提供可量化的跑姿数据与个性化训练计划</li>
+                        <li>积累的步态大数据具有巨大科研价值和商业延展潜力</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ip-strategy" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>知识产权战略布局</h2>
+                <p>全面的专利、软著与商标保护</p>
+            </div>
+            <div class="ip-container">
+                <div class="ip-visual">
+                    <div class="placeholder-img">知识产权布局图示</div>
+                </div>
+                <div class="ip-categories">
+                    <div class="ip-category">
+                        <h3>发明专利</h3>
+                        <ul>
+                            <li>《一种基于多模态传感器融合与边缘-云协同的实时跑步姿态分析方法及系统》</li>
+                            <li>《ST-FusionNet：一种面向可穿戴运动分析的多模态时空数据融合神经网络结构及其训练方法》</li>
+                            <li>《一种高密度柔性足压阵列传感器及其制造工艺与校准方法》</li>
+                            <li>《基于边缘智能的个性化实时运动反馈与干预系统》</li>
+                        </ul>
+                    </div>
+                    <div class="ip-category">
+                        <h3>实用新型专利</h3>
+                        <ul>
+                            <li>《一种集成多传感器的智能鞋垫结构》</li>
+                            <li>《柔性压力传感器阵列的优化封装结构》</li>
+                        </ul>
+                    </div>
+                    <div class="ip-category">
+                        <h3>软件著作权</h3>
+                        <ul>
+                            <li>《步态精灵跑姿实时分析与云端管理系统V1.0》</li>
+                            <li>《步态精灵边缘端多模态传感器数据采集与预处理嵌入式软件V1.0》</li>
+                            <li>《ST-FusionNet模型推理引擎固件V1.0》</li>
+                        </ul>
+                    </div>
+                    <div class="ip-category">
+                        <h3>商标注册</h3>
+                        <ul>
+                            <li>"步态精灵" / "GAIT GENIE" 文字商标</li>
+                            <li>"步态精灵" 图形LOGO商标</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>共创智能运动科技未来</h2>
+                <p>我们致力于技术创新，为跑者提供专业级的科学指导</p>
+                <div class="cta-buttons">
+                    <a href="product.html" class="btn btn-primary">了解产品详情</a>
+                    <a href="team.html" class="btn btn-outline">了解研发团队</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>灵维智驱科技</h2>
+                    <p>技术引领未来，智能驱动创新</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>导航</h3>
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="product.html">步态精灵</a></li>
+                            <li><a href="technology.html">技术与研发</a></li>
+                            <li><a href="team.html">团队介绍</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>产品</h3>
+                        <ul>
+                            <li><a href="product.html#overview">产品概览</a></li>
+                            <li><a href="product.html#features">核心功能</a></li>
+                            <li><a href="product.html#specs">产品规格</a></li>
+                            <li><a href="product.html#testimonials">用户见证</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>关注我们</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-icon">微博</a>
+                            <a href="#" class="social-icon">微信</a>
+                            <a href="#" class="social-icon">知乎</a>
+                            <a href="#" class="social-icon">B站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 灵维智驱科技有限公司. 版权所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="scroll-to-top" class="scroll-to-top">
+        <span>↑</span>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/tech-charts.js"></script>
+</body>
+</html>

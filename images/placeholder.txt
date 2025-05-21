@@ -1,0 +1,10 @@
+这是一个占位符文件，请替换为实际的产品图片。
+
+应包含以下图片：
+1. product-gait-genie.jpg - 步态精灵智能鞋垫主图
+2. management-team.jpg - 管理团队图片
+3. technical-team.jpg - 技术团队图片
+4. advisory-team.jpg - 顾问团队图片
+5. news-gait-genie-2.jpg - 步态精灵2.0新闻图片
+6. news-funding.jpg - 融资新闻图片
+7. news-partnership.jpg - 合作新闻图片

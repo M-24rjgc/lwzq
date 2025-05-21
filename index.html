@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灵维智驱科技 - 技术引领未来，智能驱动创新</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <nav id="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">灵维智驱科技</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="product.html">步态精灵</a></li>
+                    <li><a href="technology.html">技术与研发</a></li>
+                    <li><a href="team.html">团队介绍</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div id="particle-container"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>技术引领未来，智能驱动创新</h1>
+                <p>步态精灵，让每位跑者都能安全、高效地实现自己的运动目标</p>
+                <div class="cta-buttons">
+                    <a href="product.html" class="btn btn-primary">了解步态精灵</a>
+                    <a href="contact.html" class="btn btn-outline">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="product-highlights">
+        <div class="container">
+            <div class="section-header">
+                <h2>步态精灵智能跑步姿态分析系统</h2>
+                <p>专业级生物力学分析能力，便携式智能鞋垫，实时跑姿分析</p>
+            </div>
+            
+            <!-- 添加产品展示部分 -->
+            <div class="product-showcase">
+                <div class="product-image">
+                    <img src="images/product-gait-genie.jpg" alt="步态精灵智能鞋垫" class="main-product-image">
+                </div>
+                <div class="product-info">
+                    <h3>革命性的智能鞋垫技术</h3>
+                    <p>步态精灵采用超薄柔性传感技术，内置高精度IMU和柔性压力传感阵列，只有5mm厚，适配任何鞋款，为您提供专业级跑步姿态分析。</p>
+                    <ul class="product-highlights-list">
+                        <li><i class="fas fa-check-circle"></i> 超薄5mm柔性设计</li>
+                        <li><i class="fas fa-check-circle"></i> 长达30小时续航</li>
+                        <li><i class="fas fa-check-circle"></i> IP67防水防尘</li>
+                        <li><i class="fas fa-check-circle"></i> 智能APP实时反馈</li>
+                    </ul>  
+                    <div class="product-actions">
+                        <a href="product.html" class="btn btn-secondary">产品详情</a>
+                        <a href="#" class="btn btn-outline" data-action="watch-demo">观看演示</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feature-grid">                <div class="feature-item fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>多模态数据融合</h3>
+                    <p>融合IMU和足压阵列数据，实现对跑步姿态的全面、精确分析</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>高精度识别</h3>
+                    <p>核心跑姿问题识别准确率>92.3%，经专业实验室验证</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>边缘-云协同</h3>
+                    <p>边缘端实时反馈，云端深度分析，优化计算资源与用户体验</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-advantages" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>核心技术优势</h2>
+                <p>自主研发的ST-FusionNet模型，实现多模态数据精准融合与分析</p>
+            </div>
+            <div class="tech-grid">                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>多模态传感器融合</h3>
+                    <p>结合六轴IMU与柔性足压阵列，全面捕捉足部运动学与动力学参数</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>边缘-云协同AI</h3>
+                    <p>轻量化边缘端模型实现实时反馈，云端完整模型提供深度分析</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                    <h3>个性化跑姿分析</h3>
+                    <p>AI驱动的个性化评估与训练方案，兼顾损伤预防与表现提升</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team-strength">
+        <div class="container">
+            <div class="section-header">
+                <h2>强大的团队背景</h2>
+                <p>融合软件工程、运动科学、硬件研发等多学科专业人才</p>
+            </div>
+            <div class="team-overview">                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/management-team.jpg" alt="精英管理团队" />
+                        <div class="team-overlay">
+                            <a href="team.html" class="team-more">了解更多</a>
+                        </div>
+                    </div>
+                    <h3>精英管理团队</h3>
+                    <p>核心创始成员拥有丰富的算法架构设计、数据分析与项目管理经验</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/technical-team.jpg" alt="专业技术团队" />
+                        <div class="team-overlay">
+                            <a href="team.html" class="team-more">了解更多</a>
+                        </div>
+                    </div>
+                    <h3>专业技术团队</h3>
+                    <p>全栈开发、硬件研发、3D建模、数据分析等专业人才组成的创新团队</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/advisory-team.jpg" alt="学术顾问资源" />
+                        <div class="team-overlay">
+                            <a href="team.html" class="team-more">了解更多</a>
+                        </div>
+                    </div>
+                    <h3>学术顾问资源</h3>
+                    <p>与河南大学多位资深教授合作，提供专业学术引领与技术指导</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>最新动态</h2>
+                <p>了解灵维智驱科技的最新消息与技术突破</p>
+            </div>
+            <div class="news-slider">                <div class="news-item">
+                    <div class="news-image">
+                        <img src="images/news-gait-genie-2.jpg" alt="步态精灵2.0版本即将发布" />
+                        <div class="news-tag">产品更新</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>步态精灵2.0版本即将发布</h3>
+                        <p class="news-date"><i class="far fa-calendar-alt"></i> 2025年5月15日</p>
+                        <p class="news-excerpt">全新升级的步态精灵2.0版本将于下月发布，带来更精准的跑姿分析与个性化建议，以及更长的电池续航与更全面的数据分析功能。</p>
+                        <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="images/news-funding.jpg" alt="公司完成A轮融资" />
+                        <div class="news-tag">公司动态</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>公司完成A轮融资</h3>
+                        <p class="news-date"><i class="far fa-calendar-alt"></i> 2025年4月20日</p>
+                        <p class="news-excerpt">灵维智驱科技完成数千万元A轮融资，资金将主要用于产品研发升级与市场渠道拓展，进一步提升公司在智能运动科技领域的竞争力。</p>
+                        <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="images/news-partnership.jpg" alt="与国家田径队达成合作" />
+                        <div class="news-tag">合作动态</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>与国家田径队达成合作</h3>
+                        <p class="news-date"><i class="far fa-calendar-alt"></i> 2025年5月2日</p>
+                        <p class="news-excerpt">灵维智驱科技与国家田径队正式签署战略合作协议，步态精灵将成为队员日常训练与状态监测的重要工具，助力备战国际赛事。</p>
+                        <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>联系我们</h2>
+                    <p>如果您对步态精灵感兴趣，或想了解更多关于我们的技术与合作机会，请随时联系我们</p>
+                    <div class="contact-details">                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <p>河南省开封市金明大道</p>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-phone-alt"></i></span>
+                            <p>+86 1234 5678 90</p>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                            <p>contact@lingwei.tech</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="您的邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="主题">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="您的留言" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">发送信息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>灵维智驱科技</h2>
+                    <p>技术引领未来，智能驱动创新</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>导航</h3>
+                        <ul>
+                            <li><a href="index.html">首页</a></li>
+                            <li><a href="product.html">步态精灵</a></li>
+                            <li><a href="technology.html">技术与研发</a></li>
+                            <li><a href="team.html">团队介绍</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>产品</h3>
+                        <ul>
+                            <li><a href="product.html#overview">产品概览</a></li>
+                            <li><a href="product.html#features">核心功能</a></li>
+                            <li><a href="product.html#specs">产品规格</a></li>
+                            <li><a href="product.html#testimonials">用户见证</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>关注我们</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-icon">微博</a>
+                            <a href="#" class="social-icon">微信</a>
+                            <a href="#" class="social-icon">知乎</a>
+                            <a href="#" class="social-icon">B站</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 灵维智驱科技有限公司. 版权所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="scroll-to-top" class="scroll-to-top">
+        <span>↑</span>
+    </div>
+
+    <!-- 产品演示视频模态框 -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <i class="fas fa-play-circle"></i>
+                    <p>步态精灵智能鞋垫演示视频</p>
+                </div>
+                <!-- 这里可以放置实际的视频元素 -->
+                <!-- <video id="demoVideo" controls>
+                    <source src="videos/gait-genie-demo.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
