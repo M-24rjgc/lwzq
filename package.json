@@ -1,0 +1,17 @@
+{
+  "name": "gait-spirit-website",
+  "version": "1.0.0",
+  "description": "步态精灵智能跑步姿态分析系统官网",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo '静态网站构建成功' && exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "步态精灵",
+    "跑步姿态分析",
+    "静态网站"
+  ],
+  "author": "灵维智驱科技有限公司",
+  "license": "UNLICENSED"
+}
