@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>灵维智驱科技 - 技术引领未来，智能驱动创新</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsive.css">    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhancements.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <!-- 滚动进度指示器 -->
+    <div class="scroll-indicator">
+        <div class="scroll-progress"></div>
+    </div>
+
     <div id="loading">
         <div class="loader"></div>
+        <div class="loading-text">灵维智驱科技</div>
     </div>
 
     <header>
@@ -41,11 +49,41 @@
         <div id="particle-container"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>技术引领未来，智能驱动创新</h1>
-                <p>步态精灵，让每位跑者都能安全、高效地实现自己的运动目标</p>
+                <h1>灵维智驱科技</h1>
+                <div class="hero-subtitle">智能跑步姿态分析，让每一步都更科学</div>
                 <div class="cta-buttons">
-                    <a href="product.html" class="btn btn-primary">了解步态精灵</a>
-                    <a href="contact.html" class="btn btn-outline">联系我们</a>
+                    <a href="product.html" class="hero-btn-primary">
+                        <span>了解步态精灵</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="technology.html" class="hero-btn-secondary">
+                        <span>技术与研发</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据统计区域 - 智谱AI风格 -->
+    <section id="stats-section" class="stats-dark">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in" data-delay="100">
+                    <div class="stat-number" data-target="95.8">0</div>
+                    <div class="stat-label">跑姿识别准确率 %</div>
+                </div>
+                <div class="stat-item fade-in" data-delay="200">
+                    <div class="stat-number" data-target="48">0</div>
+                    <div class="stat-label">小时超长续航</div>
+                </div>
+                <div class="stat-item fade-in" data-delay="300">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">毫米超薄设计</div>
+                </div>
+                <div class="stat-item fade-in" data-delay="400">
+                    <div class="stat-number" data-target="10000">0</div>
+                    <div class="stat-label">用户信赖选择</div>
                 </div>
             </div>
         </div>
@@ -57,7 +95,7 @@
                 <h2>步态精灵智能跑步姿态分析系统</h2>
                 <p>专业级生物力学分析能力，便携式智能鞋垫，实时跑姿分析</p>
             </div>
-            
+
             <!-- 添加产品展示部分 -->
             <div class="product-showcase">
                 <div class="product-image">
@@ -65,35 +103,36 @@
                 </div>
                 <div class="product-info">
                     <h3>革命性的智能鞋垫技术</h3>
-                    <p>步态精灵采用超薄柔性传感技术，内置高精度IMU和柔性压力传感阵列，只有5mm厚，适配任何鞋款，为您提供专业级跑步姿态分析。</p>
+                    <p>步态精灵采用超薄柔性传感技术，内置高精度IMU和柔性压力传感阵列，仅3mm超薄设计，适配任何鞋款，为您提供专业级跑步姿态分析。</p>
                     <ul class="product-highlights-list">
-                        <li><i class="fas fa-check-circle"></i> 超薄5mm柔性设计</li>
-                        <li><i class="fas fa-check-circle"></i> 长达30小时续航</li>
+                        <li><i class="fas fa-check-circle"></i> 超薄3mm柔性设计</li>
+                        <li><i class="fas fa-check-circle"></i> 长达48小时续航</li>
                         <li><i class="fas fa-check-circle"></i> IP67防水防尘</li>
                         <li><i class="fas fa-check-circle"></i> 智能APP实时反馈</li>
-                    </ul>  
+                    </ul>
                     <div class="product-actions">
                         <a href="product.html" class="btn btn-secondary">产品详情</a>
                         <a href="#" class="btn btn-outline" data-action="watch-demo">观看演示</a>
                     </div>
                 </div>
             </div>
-            
-            <div class="feature-grid">                <div class="feature-item fade-in">
+
+            <div class="feature-grid">
+                <div class="feature-item fade-in stagger-child" data-delay="100">
                     <div class="feature-icon">
                         <i class="fas fa-layer-group"></i>
                     </div>
                     <h3>多模态数据融合</h3>
                     <p>融合IMU和足压阵列数据，实现对跑步姿态的全面、精确分析</p>
                 </div>
-                <div class="feature-item fade-in">
+                <div class="feature-item fade-in stagger-child" data-delay="200">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>高精度识别</h3>
-                    <p>核心跑姿问题识别准确率>92.3%，经专业实验室验证</p>
+                    <p>核心跑姿问题识别准确率高达95.8%，经专业实验室验证</p>
                 </div>
-                <div class="feature-item fade-in">
+                <div class="feature-item fade-in stagger-child" data-delay="300">
                     <div class="feature-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
@@ -110,21 +149,22 @@
                 <h2>核心技术优势</h2>
                 <p>自主研发的ST-FusionNet模型，实现多模态数据精准融合与分析</p>
             </div>
-            <div class="tech-grid">                <div class="tech-item">
+            <div class="tech-grid">
+                <div class="tech-item slide-left stagger-child" data-delay="100">
                     <div class="tech-icon">
                         <i class="fas fa-microchip"></i>
                     </div>
                     <h3>多模态传感器融合</h3>
                     <p>结合六轴IMU与柔性足压阵列，全面捕捉足部运动学与动力学参数</p>
                 </div>
-                <div class="tech-item">
+                <div class="tech-item scale-in stagger-child" data-delay="200">
                     <div class="tech-icon">
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3>边缘-云协同AI</h3>
                     <p>轻量化边缘端模型实现实时反馈，云端完整模型提供深度分析</p>
                 </div>
-                <div class="tech-item">
+                <div class="tech-item slide-right stagger-child" data-delay="300">
                     <div class="tech-icon">
                         <i class="fas fa-user-cog"></i>
                     </div>
@@ -329,6 +369,7 @@
     </div>
 
     <script src="js/particles.js"></script>
+    <script src="js/3d-background.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

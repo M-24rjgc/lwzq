@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="utilityGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D97706;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B45309;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="valueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景圆形 -->
+  <circle cx="50" cy="50" r="45" fill="url(#utilityGrad)" opacity="0.1"/>
+  
+  <!-- 主要图标 - 目标靶心与工具组合 -->
+  <!-- 靶心圆环 -->
+  <circle cx="50" cy="35" r="18" fill="none" stroke="url(#utilityGrad)" stroke-width="2" opacity="0.3"/>
+  <circle cx="50" cy="35" r="12" fill="none" stroke="url(#utilityGrad)" stroke-width="2" opacity="0.5"/>
+  <circle cx="50" cy="35" r="6" fill="url(#utilityGrad)" opacity="0.8" filter="url(#glow)"/>
+  
+  <!-- 靶心中心点 -->
+  <circle cx="50" cy="35" r="2" fill="#FFFFFF"/>
+  
+  <!-- 箭头指向靶心 -->
+  <path d="M25 20 L45 30 M40 25 L45 30 L40 35" 
+        fill="none" stroke="url(#valueGrad)" stroke-width="2.5" filter="url(#glow)"/>
+  
+  <!-- 工具图标 - 扳手 -->
+  <g transform="translate(20,65) rotate(-30)">
+    <rect x="-2" y="-8" width="4" height="16" rx="2" fill="url(#utilityGrad)" opacity="0.8"/>
+    <circle cx="0" cy="-6" r="3" fill="none" stroke="url(#utilityGrad)" stroke-width="1.5"/>
+    <circle cx="0" cy="6" r="3" fill="none" stroke="url(#utilityGrad)" stroke-width="1.5"/>
+  </g>
+  
+  <!-- 齿轮工具 -->
+  <g transform="translate(75,60) scale(0.7)">
+    <circle cx="0" cy="0" r="8" fill="url(#utilityGrad)" opacity="0.7"/>
+    <circle cx="0" cy="0" r="4" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+    <!-- 齿轮齿 -->
+    <rect x="-1" y="-12" width="2" height="4" fill="url(#utilityGrad)"/>
+    <rect x="-1" y="8" width="2" height="4" fill="url(#utilityGrad)"/>
+    <rect x="-12" y="-1" width="4" height="2" fill="url(#utilityGrad)"/>
+    <rect x="8" y="-1" width="4" height="2" fill="url(#utilityGrad)"/>
+    <rect x="-9" y="-9" width="3" height="3" fill="url(#utilityGrad)" transform="rotate(45)"/>
+    <rect x="6" y="-9" width="3" height="3" fill="url(#utilityGrad)" transform="rotate(45)"/>
+    <rect x="-9" y="6" width="3" height="3" fill="url(#utilityGrad)" transform="rotate(45)"/>
+    <rect x="6" y="6" width="3" height="3" fill="url(#utilityGrad)" transform="rotate(45)"/>
+  </g>
+  
+  <!-- 价值图表 -->
+  <g transform="translate(25,80)">
+    <!-- 图表背景 -->
+    <rect x="0" y="-10" width="30" height="15" rx="2" fill="url(#utilityGrad)" opacity="0.2"/>
+    <!-- 上升趋势线 -->
+    <path d="M2 2 L8 -2 L14 -5 L20 -8 L26 -8" 
+          fill="none" stroke="url(#valueGrad)" stroke-width="2" filter="url(#glow)"/>
+    <!-- 数据点 -->
+    <circle cx="8" cy="-2" r="1" fill="url(#valueGrad)"/>
+    <circle cx="14" cy="-5" r="1" fill="url(#valueGrad)"/>
+    <circle cx="20" cy="-8" r="1" fill="url(#valueGrad)"/>
+    <circle cx="26" cy="-8" r="1" fill="url(#valueGrad)"/>
+  </g>
+  
+  <!-- 用户图标 -->
+  <g transform="translate(70,25) scale(0.6)">
+    <!-- 头部 -->
+    <circle cx="0" cy="-5" r="4" fill="url(#utilityGrad)" opacity="0.7"/>
+    <!-- 身体 -->
+    <path d="M-6 5 C-6 0, -3 -2, 0 -2 C3 -2, 6 0, 6 5 L6 12 L-6 12 Z" 
+          fill="url(#utilityGrad)" opacity="0.7"/>
+  </g>
+  
+  <!-- 连接线表示应用 -->
+  <path d="M65 30 Q60 40, 55 50 Q50 60, 45 70" 
+        fill="none" stroke="url(#utilityGrad)" stroke-width="1.5" opacity="0.6" stroke-dasharray="3,2"/>
+  
+  <!-- 成功标记 -->
+  <g transform="translate(80,80) scale(0.8)">
+    <circle cx="0" cy="0" r="6" fill="url(#valueGrad)" opacity="0.8" filter="url(#glow)"/>
+    <path d="M-3 0 L-1 2 L3 -2" 
+          fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- 价值符号 -->
+  <text x="50" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="url(#utilityGrad)">VALUE</text>
+  
+  <!-- 动态效果 - 脉冲圆环 -->
+  <circle cx="50" cy="35" r="20" fill="none" stroke="url(#utilityGrad)" stroke-width="1" opacity="0.3">
+    <animate attributeName="r" values="20;25;20" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="noveltyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 背景圆形 -->
+  <circle cx="50" cy="50" r="45" fill="url(#noveltyGrad)" opacity="0.1"/>
+
+  <!-- 主要图标 - 创新灯泡与齿轮组合 -->
+  <!-- 灯泡轮廓 -->
+  <path d="M35 25 C35 15, 45 10, 50 10 C55 10, 65 15, 65 25 C65 35, 60 40, 58 45 L42 45 C40 40, 35 35, 35 25 Z"
+        fill="none" stroke="url(#noveltyGrad)" stroke-width="2.5" filter="url(#glow)"/>
+
+  <!-- 灯泡底座 -->
+  <rect x="42" y="45" width="16" height="8" rx="2" fill="url(#noveltyGrad)" opacity="0.8"/>
+  <rect x="44" y="53" width="12" height="4" rx="1" fill="url(#noveltyGrad)" opacity="0.6"/>
+
+  <!-- 创新火花和闪电 -->
+  <path d="M45 20 L48 25 L46 25 L49 32 L46 27 L48 27 L45 20 Z"
+        fill="#F59E0B" filter="url(#glow)"/>
+
+  <!-- 齿轮1 - 右上角 -->
+  <g transform="translate(70,20) scale(0.6)">
+    <circle cx="0" cy="0" r="8" fill="url(#noveltyGrad)" opacity="0.7"/>
+    <circle cx="0" cy="0" r="4" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+    <!-- 齿轮齿 -->
+    <rect x="-1" y="-12" width="2" height="4" fill="url(#noveltyGrad)"/>
+    <rect x="-1" y="8" width="2" height="4" fill="url(#noveltyGrad)"/>
+    <rect x="-12" y="-1" width="4" height="2" fill="url(#noveltyGrad)"/>
+    <rect x="8" y="-1" width="4" height="2" fill="url(#noveltyGrad)"/>
+    <rect x="-9" y="-9" width="3" height="3" fill="url(#noveltyGrad)" transform="rotate(45)"/>
+    <rect x="6" y="-9" width="3" height="3" fill="url(#noveltyGrad)" transform="rotate(45)"/>
+    <rect x="-9" y="6" width="3" height="3" fill="url(#noveltyGrad)" transform="rotate(45)"/>
+    <rect x="6" y="6" width="3" height="3" fill="url(#noveltyGrad)" transform="rotate(45)"/>
+  </g>
+
+  <!-- 齿轮2 - 左下角 -->
+  <g transform="translate(25,75) scale(0.5)">
+    <circle cx="0" cy="0" r="8" fill="url(#noveltyGrad)" opacity="0.7"/>
+    <circle cx="0" cy="0" r="4" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+    <!-- 齿轮齿 -->
+    <rect x="-1" y="-12" width="2" height="4" fill="url(#noveltyGrad)"/>
+    <rect x="-1" y="8" width="2" height="4" fill="url(#noveltyGrad)"/>
+    <rect x="-12" y="-1" width="4" height="2" fill="url(#noveltyGrad)"/>
+    <rect x="8" y="-1" width="4" height="2" fill="url(#noveltyGrad)"/>
+  </g>
+
+  <!-- 连接线和数据流 -->
+  <path d="M25 70 Q35 60, 45 50 Q55 40, 65 30"
+        fill="none" stroke="url(#noveltyGrad)" stroke-width="1.5" opacity="0.6" stroke-dasharray="3,2"/>
+
+  <!-- 创新点和星星 -->
+  <g transform="translate(75,70) scale(0.8)">
+    <path d="M0,-8 L2,-2 L8,-2 L3,2 L5,8 L0,4 L-5,8 L-3,2 L-8,-2 L-2,-2 Z"
+          fill="#F59E0B" filter="url(#glow)"/>
+  </g>
+
+  <!-- 新技术符号 -->
+  <text x="50" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="url(#noveltyGrad)">NEW</text>
+</svg>
