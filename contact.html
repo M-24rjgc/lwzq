@@ -152,26 +152,36 @@
 
     <section id="map-section" class="bg-light">
         <div class="container">
-            <div class="section-header">
-                <h2>来访路线</h2>
-                <p>欢迎前来参观交流</p>
-            </div>
             <div class="map-container">
-                <div class="map-placeholder">
-                    <div class="placeholder-img">公司地理位置地图</div>
+                <div class="map-area">
+                    <div class="map-header">
+                        <h2>来访路线</h2>
+                        <p>欢迎前来参观交流</p>
+                    </div>
+                    <div class="map-placeholder">
+                        <img src="images/company-location-map.jpg" alt="灵维智驱科技位置地图" class="location-map-img">
+                    </div>
                 </div>
                 <div class="directions">
                     <div class="direction-item">
                         <h3><span class="direction-icon">🚗</span> 自驾路线</h3>
-                        <p>导航至"河南大学开元校区"，沿金明大道向北500米即到灵维科技园</p>
+                        <p>导航至"河南大学金明校区"，沿金明大道向南1.7公里即到灵维科技园</p>
                     </div>
                     <div class="direction-item">
                         <h3><span class="direction-icon">🚌</span> 公共交通</h3>
-                        <p>乘坐9路、28路、66路公交车至"河南大学"站下车，向北步行约300米</p>
+                        <p>乘坐16路、33路、11路公交车至"河大新校区西门"站，换乘至"省税校"站下车，步行约100米</p>
                     </div>
                     <div class="direction-item">
                         <h3><span class="direction-icon">✈️</span> 高铁/飞机</h3>
-                        <p>开封北站/郑州新郑机场下，可乘坐出租车或联系我们安排接送</p>
+                        <p>开封北站：沿东京大道向东3.7公里，转金明大道向南1.5公里（约15分钟车程）</p>
+                    </div>
+                    <div class="route-actions">
+                        <h4>📍 路线规划</h4>
+                        <div class="route-buttons">
+                            <button class="btn btn-sm btn-primary" onclick="openExternalMap('driving')">🚗 驾车路线</button>
+                            <button class="btn btn-sm btn-outline" onclick="openExternalMap('transit')">🚌 公交路线</button>
+                            <button class="btn btn-sm btn-outline" onclick="openExternalMap('walking')">🚶 步行路线</button>
+                        </div>
                     </div>
                 </div>
             </div>

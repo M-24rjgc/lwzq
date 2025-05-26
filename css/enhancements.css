@@ -370,3 +370,102 @@
         border: 2px solid currentColor;
     }
 }
+
+/* 新增：产品图片悬浮效果增强 */
+.main-product-image {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(1) contrast(1) saturate(1);
+}
+
+.main-product-image:hover {
+    transform: scale(1.05) rotate(1deg);
+    filter: brightness(1.1) contrast(1.1) saturate(1.2);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
+}
+
+/* 新增：技术架构图增强效果 */
+.tech-diagram {
+    transition: all 0.5s ease;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.tech-diagram:hover {
+    transform: scale(1.02);
+    box-shadow: var(--box-shadow-lg);
+}
+
+/* 新增：页面加载动画优化 */
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 新增：渐进式加载动画 */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 新增：图片懒加载效果 */
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}
+
+/* 新增：背景渐变动画 */
+.gradient-bg {
+    background: linear-gradient(-45deg, #2563EB, #3B82F6, #8B5CF6, #10B981);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

@@ -306,8 +306,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 初始化滚动进度指示器
     initScrollProgress();
-      // 初始化页面内导航
+
+    // 初始化页面内导航
     initPageNavigation();
+
+    // 初始化滚动动画
+    initAdvancedScrollAnimations();
+
+    // 初始化图片懒加载
+    initLazyLoading();
+
+    // 初始化地图功能
+    initMapSection();
 
     // 产品展示区域动画效果
     const productShowcase = document.querySelector('.product-showcase');
@@ -916,3 +926,178 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// 高级滚动动画系统
+function initAdvancedScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll, .feature-item, .tech-item, .team-card');
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // 添加延迟效果，让动画更有层次
+                setTimeout(() => {
+                    entry.target.classList.add('in-view');
+                }, index * 100);
+
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    animatedElements.forEach(element => {
+        element.classList.add('animate-on-scroll');
+        observer.observe(element);
+    });
+}
+
+// 图片懒加载系统
+function initLazyLoading() {
+    const lazyImages = document.querySelectorAll('img[data-src]');
+
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy-image');
+                    img.classList.add('loaded');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => {
+            img.classList.add('lazy-image');
+            imageObserver.observe(img);
+        });
+    } else {
+        // 降级处理：直接加载所有图片
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+            img.classList.add('loaded');
+        });
+    }
+}
+
+// 增强的视觉效果
+function initVisualEnhancements() {
+    // 为主要图片添加悬浮效果
+    const productImages = document.querySelectorAll('.main-product-image, .tech-diagram');
+    productImages.forEach(img => {
+        img.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05) rotate(1deg)';
+        });
+
+        img.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1) rotate(0deg)';
+        });
+    });
+
+    // 添加背景渐变动画到hero区域
+    const heroSection = document.querySelector('#hero');
+    if (heroSection) {
+        heroSection.classList.add('gradient-bg');
+    }
+}
+
+// 地图功能初始化
+function initMapSection() {
+    const mapPlaceholder = document.querySelector('.map-placeholder');
+    if (!mapPlaceholder) return;
+
+    // 地图交互功能已简化，移除了遮挡地图的信息覆盖层
+
+    // 为地图占位符添加交互功能
+    mapPlaceholder.addEventListener('click', function() {
+        // 可以在这里集成真实的高德地图
+        showMapModal();
+    });
+
+    // 移除了地图信息覆盖层，避免遮挡地图内容
+}
+
+// 显示地图模态框（未来可集成真实地图）
+function showMapModal() {
+    const modal = document.createElement('div');
+    modal.className = 'map-modal';
+    modal.innerHTML = `
+        <div class="map-modal-content">
+            <div class="map-modal-header">
+                <h3>灵维智驱科技位置</h3>
+                <button class="close-map-modal">&times;</button>
+            </div>
+            <div class="map-modal-body">
+                <div class="location-info">
+                    <h4>📍 公司地址</h4>
+                    <p>河南省开封市金明大道灵维科技园 A座 3层</p>
+                    <h4>🚗 导航建议</h4>
+                    <p>导航至"河南大学金明校区"，沿金明大道向南1.7公里</p>
+                    <h4>📞 联系电话</h4>
+                    <p>+86 1234 5678 90</p>
+                </div>
+                <div class="map-actions">
+                    <button class="btn btn-primary" onclick="openExternalMap()">
+                        在高德地图中打开
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+
+    // 关闭模态框
+    const closeBtn = modal.querySelector('.close-map-modal');
+    closeBtn.addEventListener('click', function() {
+        document.body.removeChild(modal);
+        document.body.style.overflow = 'auto';
+    });
+
+    // 点击外部关闭
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            document.body.removeChild(modal);
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+// 打开外部地图应用
+function openExternalMap(routeType = 'marker') {
+    const companyLng = 114.303356;
+    const companyLat = 34.808166;
+    const companyName = encodeURIComponent('灵维智驱科技');
+
+    if (routeType === 'marker') {
+        // 显示标记位置
+        const amapUrl = `https://uri.amap.com/marker?position=${companyLng},${companyLat}&name=${companyName}&src=myapp&coordinate=gaode&callnative=1`;
+        window.open(amapUrl, '_blank');
+    } else {
+        // 路线规划
+        let url = `https://uri.amap.com/navigation?to=${companyLng},${companyLat}&toname=${companyName}&coordinate=gaode&callnative=1`;
+
+        switch(routeType) {
+            case 'driving':
+                url += '&mode=car';
+                break;
+            case 'transit':
+                url += '&mode=bus';
+                break;
+            case 'walking':
+                url += '&mode=walk';
+                break;
+        }
+
+        window.open(url, '_blank');
+    }
+}
+
+// 路线规划功能（由HTML按钮调用）
+// 这个函数已经被openExternalMap替代，保留以防兼容性问题
