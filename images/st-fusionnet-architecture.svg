@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
@@ -26,111 +26,118 @@
   </defs>
 
   <!-- 背景 -->
-  <rect width="1200" height="800" fill="#ffffff"/>
+  <rect width="800" height="800" fill="#ffffff"/>
 
   <!-- 标题 -->
-  <text x="600" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#2c3e50">
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2c3e50">
     ST-FusionNet 多模态时空融合神经网络架构
   </text>
 
   <!-- 输入层 -->
   <g id="input-layer">
     <!-- IMU输入 -->
-    <rect x="60" y="80" width="140" height="70" rx="10" fill="url(#blueGrad)" filter="url(#shadow)"/>
-    <text x="130" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">IMU数据</text>
-    <text x="130" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">6轴时序数据</text>
-    <text x="130" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">(ax,ay,az,gx,gy,gz)</text>
+    <rect x="150" y="70" width="200" height="60" rx="10" fill="url(#blueGrad)" filter="url(#shadow)"/>
+    <text x="250" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">IMU数据</text>
+    <text x="250" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">6轴时序数据 (ax,ay,az,gx,gy,gz)</text>
 
     <!-- 足压输入 -->
-    <rect x="60" y="180" width="140" height="70" rx="10" fill="url(#greenGrad)" filter="url(#shadow)"/>
-    <text x="130" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">足压阵列</text>
-    <text x="130" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">8×8压力矩阵</text>
-    <text x="130" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">空间分布数据</text>
+    <rect x="450" y="70" width="200" height="60" rx="10" fill="url(#greenGrad)" filter="url(#shadow)"/>
+    <text x="550" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">足压阵列</text>
+    <text x="550" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">8×8压力矩阵 空间分布数据</text>
   </g>
 
   <!-- 特征提取分支 -->
   <g id="feature-extraction">
     <!-- IMU特征提取 -->
-    <rect x="280" y="70" width="110" height="50" rx="8" fill="#E3F2FD" stroke="#2196F3" stroke-width="2"/>
-    <text x="335" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1976D2">TCN层</text>
-    <text x="335" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1976D2">时序卷积</text>
+    <rect x="100" y="160" width="150" height="40" rx="8" fill="#E3F2FD" stroke="#2196F3" stroke-width="2"/>
+    <text x="175" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1976D2">TCN层</text>
+    <text x="175" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1976D2">时序卷积</text>
 
-    <rect x="280" y="130" width="110" height="50" rx="8" fill="#E3F2FD" stroke="#2196F3" stroke-width="2"/>
-    <text x="335" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1976D2">BiLSTM层</text>
-    <text x="335" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1976D2">双向记忆</text>
+    <rect x="270" y="160" width="150" height="40" rx="8" fill="#E3F2FD" stroke="#2196F3" stroke-width="2"/>
+    <text x="345" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1976D2">BiLSTM层</text>
+    <text x="345" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1976D2">双向记忆</text>
 
     <!-- 足压特征提取 -->
-    <rect x="280" y="200" width="110" height="50" rx="8" fill="#E8F5E8" stroke="#4CAF50" stroke-width="2"/>
-    <text x="335" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2E7D32">CNN层</text>
-    <text x="335" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2E7D32">空间卷积</text>
+    <rect x="450" y="160" width="150" height="40" rx="8" fill="#E8F5E8" stroke="#4CAF50" stroke-width="2"/>
+    <text x="525" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2E7D32">CNN层</text>
+    <text x="525" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2E7D32">空间卷积</text>
 
-    <rect x="280" y="260" width="110" height="50" rx="8" fill="#E8F5E8" stroke="#4CAF50" stroke-width="2"/>
-    <text x="335" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2E7D32">池化层</text>
-    <text x="335" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2E7D32">特征压缩</text>
+    <rect x="620" y="160" width="150" height="40" rx="8" fill="#E8F5E8" stroke="#4CAF50" stroke-width="2"/>
+    <text x="695" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2E7D32">池化层</text>
+    <text x="695" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2E7D32">特征压缩</text>
   </g>
 
   <!-- 注意力融合模块 -->
   <g id="attention-fusion">
-    <rect x="460" y="150" width="180" height="100" rx="12" fill="url(#orangeGrad)" filter="url(#shadow)"/>
-    <text x="550" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="white">注意力融合模块</text>
+    <rect x="200" y="240" width="400" height="80" rx="12" fill="url(#orangeGrad)" filter="url(#shadow)"/>
+    <text x="400" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="white">注意力融合模块</text>
 
     <!-- 自注意力 -->
-    <rect x="480" y="190" width="70" height="25" rx="5" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
-    <text x="515" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#E65100">自注意力</text>
+    <rect x="220" y="280" width="100" height="25" rx="5" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
+    <text x="270" y="297" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#E65100">自注意力</text>
 
     <!-- 跨模态注意力 -->
-    <rect x="570" y="190" width="70" height="25" rx="5" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
-    <text x="605" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#E65100">跨模态注意力</text>
+    <rect x="350" y="280" width="100" height="25" rx="5" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
+    <text x="400" y="297" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#E65100">跨模态注意力</text>
 
     <!-- 时变权重 -->
-    <rect x="480" y="220" width="140" height="20" rx="5" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
-    <text x="550" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#E65100">步态事件感知权重调节</text>
+    <rect x="480" y="280" width="100" height="25" rx="5" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
+    <text x="530" y="297" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#E65100">时变权重</text>
   </g>
 
   <!-- 多任务输出层 -->
   <g id="output-layer">
     <!-- 分类头 -->
-    <rect x="720" y="160" width="140" height="70" rx="10" fill="url(#purpleGrad)" filter="url(#shadow)"/>
-    <text x="790" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">跑姿分类头</text>
-    <text x="790" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">5种核心问题识别</text>
-    <text x="790" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Softmax输出</text>
+    <rect x="150" y="360" width="200" height="60" rx="10" fill="url(#purpleGrad)" filter="url(#shadow)"/>
+    <text x="250" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">跑姿分类头</text>
+    <text x="250" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">5种核心问题识别 (Softmax输出)</text>
 
     <!-- 回归头 -->
-    <rect x="720" y="250" width="140" height="70" rx="10" fill="url(#purpleGrad)" filter="url(#shadow)"/>
-    <text x="790" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">参数回归头</text>
-    <text x="790" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">连续参数估计</text>
-    <text x="790" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">触地时间、角度等</text>
+    <rect x="450" y="360" width="200" height="60" rx="10" fill="url(#purpleGrad)" filter="url(#shadow)"/>
+    <text x="550" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">参数回归头</text>
+    <text x="550" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">连续参数估计 (触地时间、角度等)</text>
   </g>
 
   <!-- 最终输出 -->
   <g id="final-output">
-    <rect x="940" y="190" width="160" height="90" rx="12" fill="#263238" filter="url(#shadow)"/>
-    <text x="1020" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">智能跑姿分析结果</text>
-    <text x="1020" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#B0BEC5">• 跑姿问题类型</text>
-    <text x="1020" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#B0BEC5">• 生物力学参数</text>
-    <text x="1020" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#B0BEC5">• 个性化建议</text>
+    <rect x="200" y="460" width="400" height="80" rx="12" fill="#263238" filter="url(#shadow)"/>
+    <text x="400" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="white">智能跑姿分析结果</text>
+    <text x="400" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#B0BEC5">• 跑姿问题类型  • 生物力学参数  • 个性化建议</text>
+    <text x="400" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#B0BEC5">• 实时反馈指令  • 训练优化方案</text>
   </g>
 
   <!-- 连接线 -->
   <g id="connections" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
     <!-- 输入到特征提取 -->
-    <path d="M 200 115 L 280 95"/>
-    <path d="M 200 115 L 280 155"/>
-    <path d="M 200 215 L 280 225"/>
-    <path d="M 200 215 L 280 285"/>
+    <path d="M 250 130 L 175 160"/>
+    <path d="M 250 130 L 345 160"/>
+    <path d="M 550 130 L 525 160"/>
+    <path d="M 550 130 L 695 160"/>
 
     <!-- 特征提取到融合 -->
-    <path d="M 390 125 L 460 180"/>
-    <path d="M 390 155 L 460 200"/>
-    <path d="M 390 225 L 460 220"/>
-    <path d="M 390 285 L 460 240"/>
+    <path d="M 175 200 L 300 240"/>
+    <path d="M 345 200 L 350 240"/>
+    <path d="M 525 200 L 450 240"/>
+    <path d="M 695 200 L 500 240"/>
 
     <!-- 融合到输出 -->
-    <path d="M 640 180 L 720 195"/>
-    <path d="M 640 220 L 720 285"/>
+    <path d="M 350 320 L 250 360"/>
+    <path d="M 450 320 L 550 360"/>
 
     <!-- 输出到最终结果 -->
-    <path d="M 860 195 L 940 215"/>
-    <path d="M 860 285 L 940 255"/>
+    <path d="M 250 420 L 350 460"/>
+    <path d="M 550 420 L 450 460"/>
+  </g>
+
+  <!-- 技术特点说明 -->
+  <g id="tech-highlights">
+    <rect x="50" y="580" width="700" height="150" rx="15" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
+    <text x="400" y="605" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">ST-FusionNet 技术特点</text>
+
+    <text x="70" y="630" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">• 并行双分支架构：分别处理IMU时序数据和足压空间数据</text>
+    <text x="70" y="650" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">• 创新注意力机制：动态分配不同模态数据在不同跑步阶段的权重</text>
+    <text x="70" y="670" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">• 多任务学习：同时进行跑姿分类与关键参数回归预测</text>
+    <text x="70" y="690" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">• 步态感知优化：基于跑步周期的时变注意力权重调节机制</text>
+    <text x="70" y="710" font-family="Arial, sans-serif" font-size="12" fill="#2c3e50">• 边缘适配：支持量化、剪枝等轻量化优化，适配资源受限设备</text>
   </g>
 </svg>

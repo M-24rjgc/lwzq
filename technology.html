@@ -56,7 +56,7 @@
             <div class="bg-highlights">
                 <div class="stats-card">
                     <div class="chart-container">
-                        <div class="placeholder-img">跑者损伤率统计图表</div>
+                        <canvas id="injury-rate-chart"></canvas>
                     </div>
                     <div class="stats-text">
                         <h3>损伤高发现状</h3>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="stats-card">
                     <div class="chart-container">
-                        <div class="placeholder-img">跑步经济性提升图表</div>
+                        <canvas id="economy-improvement-chart"></canvas>
                     </div>
                     <div class="stats-text">
                         <h3>表现提升空间</h3>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="stats-card">
                     <div class="chart-container">
-                        <div class="placeholder-img">现有解决方案对比图表</div>
+                        <canvas id="solution-comparison-chart"></canvas>
                     </div>
                     <div class="stats-text">
                         <h3>现有方案局限</h3>
@@ -87,21 +87,21 @@
                 <div class="theory-grid">
                     <div class="theory-item">
                         <div class="theory-icon">
-                            <div class="placeholder-img">运动生物力学图标</div>
+                            <img src="images/动作生物力学图标.png" alt="运动生物力学图标" class="theory-icon-img">
                         </div>
                         <h4>运动生物力学</h4>
                         <p>研究人体运动时的受力情况、能量消耗、动作效率及损伤机制，为跑姿评估与优化提供理论依据</p>
                     </div>
                     <div class="theory-item">
                         <div class="theory-icon">
-                            <div class="placeholder-img">多模态数据融合图标</div>
+                            <img src="images/多模态数据融合图标.png" alt="多模态数据融合图标" class="theory-icon-img">
                         </div>
                         <h4>多模态数据融合理论</h4>
                         <p>通过融合IMU的时序运动学数据与足压阵列的空间动力学数据，获取更全面、更鲁棒的跑姿信息</p>
                     </div>
                     <div class="theory-item">
                         <div class="theory-icon">
-                            <div class="placeholder-img">边缘-云协同计算图标</div>
+                            <img src="images/边云协同计算图标.png" alt="边缘-云协同计算图标" class="theory-icon-img">
                         </div>
                         <h4>边缘-云协同计算理论</h4>
                         <p>边缘端负责实时数据处理与反馈，云端承担复杂模型训练与个性化方案生成，实现资源优化配置</p>
@@ -122,7 +122,7 @@
                     <h3>ST-FusionNet：多模态时空融合神经网络</h3>
                     <div class="tech-content">
                         <div class="tech-visual">
-                            <img src="images/st-fusionnet-architecture-new.png" alt="ST-FusionNet多模态时空融合神经网络架构" class="tech-diagram">
+                            <img src="images/st-fusionnet-architecture.svg" alt="ST-FusionNet多模态时空融合神经网络架构" class="tech-diagram">
                         </div>
                         <div class="tech-description">
                             <p>ST-FusionNet是我们针对跑步这一特定运动场景，自主研发的深度学习神经网络模型。其核心目标是有效融合IMU提供的时序运动学数据和足压阵列提供的空间动力学数据，以实现对复杂跑姿模式的高精度识别与评估。</p>
