@@ -48,7 +48,8 @@
 
     /* 产品展示区域 */
     .product-showcase {
-        padding: 30px;
+        padding: 25px;
+        margin: 25px 0;
     }
 
     /* 技术页特定样式 */
@@ -66,6 +67,15 @@
 @media (min-width: 768px) and (max-width: 991px) {
     .container {
         max-width: 720px;
+    }
+
+    /* 调整section间距 */
+    section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
     }
 
     /* 导航栏 */
@@ -115,6 +125,8 @@
     /* 产品页特定样式 */
     .product-showcase {
         flex-direction: column;
+        padding: 20px;
+        margin: 20px 0;
     }
 
     .product-image, .product-details {
@@ -129,8 +141,30 @@
         font-size: 1.1rem;
     }
 
+    .feature-summary {
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+
     .feature-detail {
         grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .feature-image {
+        min-height: 200px;
+    }
+
+    .feature-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 16px;
+        padding-left: 16px;
+    }
+
+    .feature-text p::before {
+        width: 3px;
+        height: 18px;
     }
 
     .specs-tabs {
@@ -173,17 +207,27 @@
     }
 
     /* 页面导航 */
+    .page-nav {
+        padding: 2px 0;
+    }
+
     .page-nav ul {
         justify-content: flex-start;
         overflow-x: auto;
-        padding-bottom: 5px;
+        padding-bottom: 3px;
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
         white-space: nowrap;
+        gap: 6px;
     }
 
     .page-nav li {
         display: inline-block;
+    }
+
+    .page-nav a {
+        padding: 3px 14px;
+        font-size: 0.9rem;
     }
 }
 
@@ -192,6 +236,20 @@
     .container {
         max-width: 100%;
         padding: 0 1rem;
+    }
+
+    /* 调整section间距 */
+    section {
+        padding: 40px 0;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+        margin-bottom: 16px;
     }
 
     /* 导航栏 */
@@ -257,6 +315,8 @@
     /* 产品页特定样式 */
     .product-showcase {
         flex-direction: column;
+        padding: 15px;
+        margin: 15px 0;
     }
 
     .product-image, .product-details {
@@ -271,8 +331,45 @@
         font-size: 1.1rem;
     }
 
+    .feature-summary {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+
     .feature-detail {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-image {
+        min-height: 180px;
+        order: -1; /* 图片在上方 */
+    }
+
+    .feature-text {
+        padding: 5px 0;
+    }
+
+    .feature-text p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 14px;
+        padding-left: 14px;
+    }
+
+    .feature-text p::before {
+        width: 3px;
+        height: 16px;
+        top: 6px;
+    }
+
+    /* 手风琴标题优化 */
+    .feature-header {
+        padding: 18px 20px;
+    }
+
+    .feature-tab.active .feature-content {
+        padding: 0 20px 20px;
     }
 
     .specs-tabs {
@@ -323,6 +420,27 @@
 
     .team-member {
         margin-bottom: 2rem;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .member-photo .member-image {
+        height: 250px;
+    }
+
+    /* 页面导航优化 */
+    .page-nav {
+        padding: 1px 0;
+    }
+
+    .page-nav ul {
+        gap: 4px;
+    }
+
+    .page-nav a {
+        padding: 2px 10px;
+        font-size: 0.85rem;
     }
 
     /* 联系页特定样式 */
@@ -425,6 +543,20 @@
 
 /* 超小设备（小型手机，576px以下）*/
 @media (max-width: 575px) {
+    /* 进一步调整section间距 */
+    section {
+        padding: 30px 0;
+    }
+
+    .section-header {
+        margin-bottom: 25px;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+
     /* 导航栏 */
     .logo a {
         font-size: 1.2rem;
@@ -438,10 +570,12 @@
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
+        margin-top: 30px;
     }
 
     .cta-buttons .btn {
-        margin: 0.5rem 0;
+        margin: 0;
         width: 100%;
         text-align: center;
     }
@@ -466,6 +600,75 @@
 
     .spec-item {
         padding: 15px;
+    }
+
+    /* 页面导航超紧凑优化 */
+    .page-nav {
+        padding: 0;
+    }
+
+    .page-nav ul {
+        gap: 2px;
+    }
+
+    .page-nav a {
+        padding: 1px 8px;
+        font-size: 0.8rem;
+    }
+
+    /* 功能详解超紧凑优化 */
+    .feature-detail {
+        gap: 15px;
+    }
+
+    .feature-image {
+        min-height: 150px;
+    }
+
+    .feature-text p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+        padding-left: 12px;
+    }
+
+    .feature-text p::before {
+        width: 2px;
+        height: 14px;
+        top: 5px;
+    }
+
+    .feature-header {
+        padding: 15px 18px;
+    }
+
+    .feature-header h3 {
+        font-size: 1rem;
+    }
+
+    .feature-summary {
+        font-size: 0.8rem;
+        line-height: 1.1;
+    }
+
+    .toggle-icon {
+        width: 26px;
+        height: 26px;
+        font-size: 1.6rem;
+    }
+
+    .feature-tab.active .feature-content {
+        padding: 0 18px 18px;
+    }
+
+    /* 团队成员照片超紧凑优化 */
+    .member-photo .member-image {
+        height: 200px;
+    }
+
+    .team-member {
+        padding: 20px;
+        gap: 15px;
     }
 
     /* 联系页特定样式 */

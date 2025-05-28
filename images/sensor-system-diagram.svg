@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
@@ -26,131 +26,109 @@
   </defs>
 
   <!-- 背景 -->
-  <rect width="1200" height="800" fill="#ffffff"/>
+  <rect width="800" height="800" fill="#ffffff"/>
 
   <!-- 标题 -->
-  <text x="600" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#2c3e50">
+  <text x="400" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2c3e50">
     步态精灵传感器系统工作原理
   </text>
 
   <!-- 智能鞋垫轮廓 -->
   <g id="insole">
-    <ellipse cx="180" cy="250" rx="90" ry="140" fill="#f8f9fa" stroke="#333" stroke-width="3"/>
-    <text x="180" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#666">智能鞋垫</text>
+    <ellipse cx="400" cy="150" rx="120" ry="80" fill="#f8f9fa" stroke="#333" stroke-width="3"/>
+    <text x="400" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#666">智能鞋垫传感器布局</text>
 
     <!-- IMU传感器位置 -->
-    <rect x="140" y="150" width="80" height="40" rx="8" fill="url(#blueGrad)" filter="url(#shadow)"/>
-    <text x="180" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">IMU传感器</text>
+    <rect x="250" y="120" width="100" height="40" rx="8" fill="url(#blueGrad)" filter="url(#shadow)"/>
+    <text x="300" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">IMU传感器</text>
 
     <!-- 足压阵列位置 -->
-    <rect x="140" y="300" width="80" height="50" rx="8" fill="url(#greenGrad)" filter="url(#shadow)"/>
-    <text x="180" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">足压阵列</text>
-    <text x="180" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">8×8传感点</text>
+    <rect x="450" y="120" width="100" height="40" rx="8" fill="url(#greenGrad)" filter="url(#shadow)"/>
+    <text x="500" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">足压阵列</text>
+    <text x="500" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">8×8传感点</text>
 
     <!-- 主控芯片 -->
-    <rect x="140" y="220" width="80" height="30" rx="5" fill="url(#orangeGrad)" filter="url(#shadow)"/>
-    <text x="180" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">ESP32-S3</text>
+    <rect x="350" y="180" width="100" height="35" rx="5" fill="url(#orangeGrad)" filter="url(#shadow)"/>
+    <text x="400" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">ESP32-S3</text>
+    <text x="400" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">双核处理器</text>
   </g>
 
   <!-- 数据处理流程 -->
   <g id="processing-flow">
-    <rect x="350" y="80" width="800" height="400" rx="15" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
-    <text x="750" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2c3e50">数据处理与分析流程</text>
+    <rect x="50" y="250" width="700" height="120" rx="15" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+    <text x="400" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">数据处理与分析流程</text>
 
     <!-- 处理步骤 -->
-    <rect x="380" y="140" width="120" height="50" rx="8" fill="url(#blueGrad)" filter="url(#shadow)"/>
-    <text x="440" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">数据采集</text>
+    <rect x="80" y="290" width="120" height="50" rx="8" fill="url(#blueGrad)" filter="url(#shadow)"/>
+    <text x="140" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">数据采集</text>
 
-    <rect x="530" y="140" width="120" height="50" rx="8" fill="url(#greenGrad)" filter="url(#shadow)"/>
-    <text x="590" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">信号预处理</text>
+    <rect x="220" y="290" width="120" height="50" rx="8" fill="url(#greenGrad)" filter="url(#shadow)"/>
+    <text x="280" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">信号预处理</text>
 
-    <rect x="680" y="140" width="120" height="50" rx="8" fill="url(#orangeGrad)" filter="url(#shadow)"/>
-    <text x="740" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">特征提取</text>
+    <rect x="360" y="290" width="120" height="50" rx="8" fill="url(#orangeGrad)" filter="url(#shadow)"/>
+    <text x="420" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">特征提取</text>
 
-    <rect x="830" y="140" width="120" height="50" rx="8" fill="url(#purpleGrad)" filter="url(#shadow)"/>
-    <text x="890" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">AI分析</text>
+    <rect x="500" y="290" width="120" height="50" rx="8" fill="url(#purpleGrad)" filter="url(#shadow)"/>
+    <text x="560" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">AI分析</text>
 
-    <rect x="980" y="140" width="120" height="50" rx="8" fill="#263238" filter="url(#shadow)"/>
-    <text x="1040" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">结果输出</text>
+    <rect x="640" y="290" width="100" height="50" rx="8" fill="#263238" filter="url(#shadow)"/>
+    <text x="690" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">结果输出</text>
 
     <!-- 连接箭头 -->
-    <line x1="500" y1="165" x2="530" y2="165" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
-    <line x1="650" y1="165" x2="680" y2="165" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
-    <line x1="800" y1="165" x2="830" y2="165" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
-    <line x1="950" y1="165" x2="980" y2="165" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="200" y1="315" x2="220" y2="315" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="340" y1="315" x2="360" y2="315" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="480" y1="315" x2="500" y2="315" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <line x1="620" y1="315" x2="640" y2="315" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
   </g>
 
   <!-- IMU处理详情 -->
   <g id="imu-details">
-    <rect x="380" y="220" width="220" height="100" rx="10" fill="#E3F2FD" stroke="#2196F3" stroke-width="2"/>
-    <text x="490" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1976D2">IMU数据处理</text>
-    <text x="390" y="265" font-family="Arial, sans-serif" font-size="11" fill="#1976D2">• 卡尔曼滤波去噪</text>
-    <text x="390" y="280" font-family="Arial, sans-serif" font-size="11" fill="#1976D2">• 四元数姿态解算</text>
-    <text x="390" y="295" font-family="Arial, sans-serif" font-size="11" fill="#1976D2">• 步频、触地时间计算</text>
-    <text x="390" y="310" font-family="Arial, sans-serif" font-size="11" fill="#1976D2">• 运动学参数提取</text>
+    <rect x="80" y="390" width="320" height="100" rx="10" fill="#E3F2FD" stroke="#2196F3" stroke-width="2"/>
+    <text x="240" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1976D2">IMU数据处理</text>
+    <text x="100" y="435" font-family="Arial, sans-serif" font-size="12" fill="#1976D2">• 卡尔曼滤波去噪</text>
+    <text x="100" y="450" font-family="Arial, sans-serif" font-size="12" fill="#1976D2">• 四元数姿态解算</text>
+    <text x="100" y="465" font-family="Arial, sans-serif" font-size="12" fill="#1976D2">• 步频、触地时间计算</text>
+    <text x="100" y="480" font-family="Arial, sans-serif" font-size="12" fill="#1976D2">• 运动学参数提取</text>
   </g>
 
   <!-- 足压处理详情 -->
   <g id="pressure-details">
-    <rect x="630" y="220" width="220" height="100" rx="10" fill="#E8F5E8" stroke="#4CAF50" stroke-width="2"/>
-    <text x="740" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2E7D32">足压数据处理</text>
-    <text x="640" y="265" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">• 中值滤波去噪</text>
-    <text x="640" y="280" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">• COP轨迹计算</text>
-    <text x="640" y="295" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">• 着地方式识别</text>
-    <text x="640" y="310" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">• 动力学参数提取</text>
+    <rect x="420" y="390" width="320" height="100" rx="10" fill="#E8F5E8" stroke="#4CAF50" stroke-width="2"/>
+    <text x="580" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2E7D32">足压数据处理</text>
+    <text x="440" y="435" font-family="Arial, sans-serif" font-size="12" fill="#2E7D32">• 中值滤波去噪</text>
+    <text x="440" y="450" font-family="Arial, sans-serif" font-size="12" fill="#2E7D32">• COP轨迹计算</text>
+    <text x="440" y="465" font-family="Arial, sans-serif" font-size="12" fill="#2E7D32">• 着地方式识别</text>
+    <text x="440" y="480" font-family="Arial, sans-serif" font-size="12" fill="#2E7D32">• 动力学参数提取</text>
   </g>
 
   <!-- 输出结果 -->
   <g id="output-results">
-    <rect x="380" y="350" width="470" height="100" rx="12" fill="#263238" filter="url(#shadow)"/>
-    <text x="615" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">实时输出结果</text>
-    <text x="390" y="395" font-family="Arial, sans-serif" font-size="12" fill="#B0BEC5">• 20+项专业跑步参数 (步频、步长、触地时间、垂直振幅等)</text>
-    <text x="390" y="415" font-family="Arial, sans-serif" font-size="12" fill="#B0BEC5">• 5种核心跑姿问题识别 (准确率&gt;95.8%)</text>
-    <text x="390" y="435" font-family="Arial, sans-serif" font-size="12" fill="#B0BEC5">• 实时语音/震动反馈指令 (延迟&lt;100ms)</text>
+    <rect x="80" y="510" width="640" height="80" rx="12" fill="#263238" filter="url(#shadow)"/>
+    <text x="400" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">实时输出结果</text>
+    <text x="100" y="555" font-family="Arial, sans-serif" font-size="13" fill="#B0BEC5">• 20+项专业跑步参数 (步频、步长、触地时间、垂直振幅等)</text>
+    <text x="100" y="570" font-family="Arial, sans-serif" font-size="13" fill="#B0BEC5">• 5种核心跑姿问题识别 (准确率&gt;95.8%)  • 实时语音/震动反馈指令 (延迟&lt;100ms)</text>
   </g>
 
   <!-- 连接线从鞋垫到处理流程 -->
-  <line x1="270" y1="170" x2="350" y2="170" stroke="#2196F3" stroke-width="3" marker-end="url(#arrowhead)"/>
-  <line x1="270" y1="235" x2="350" y2="235" stroke="#FF9800" stroke-width="3" marker-end="url(#arrowhead)"/>
-  <line x1="270" y1="325" x2="350" y2="325" stroke="#4CAF50" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="230" x2="400" y2="250" stroke="#2196F3" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+  <!-- 从处理流程到详情 -->
+  <line x1="240" y1="340" x2="240" y2="390" stroke="#2196F3" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="580" y1="340" x2="580" y2="390" stroke="#4CAF50" stroke-width="2" marker-end="url(#arrowhead)"/>
 
   <!-- 技术规格 -->
   <g id="specifications">
-    <rect x="50" y="500" width="300" height="250" rx="12" fill="#ffffff" stroke="#e9ecef" stroke-width="2"/>
-    <text x="200" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">核心技术规格</text>
+    <rect x="80" y="610" width="640" height="150" rx="12" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
+    <text x="400" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">核心技术规格与创新特点</text>
 
-    <text x="70" y="560" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">硬件规格:</text>
-    <text x="80" y="580" font-family="Arial, sans-serif" font-size="11" fill="#6c757d">• 厚度: 3mm超薄设计</text>
-    <text x="80" y="595" font-family="Arial, sans-serif" font-size="11" fill="#6c757d">• 续航: 48小时连续使用</text>
-    <text x="80" y="610" font-family="Arial, sans-serif" font-size="11" fill="#6c757d">• 防护: IP67防水防尘</text>
-    <text x="80" y="625" font-family="Arial, sans-serif" font-size="11" fill="#6c757d">• 重量: 单只&lt;50g</text>
+    <text x="100" y="660" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">硬件规格:</text>
+    <text x="110" y="675" font-family="Arial, sans-serif" font-size="12" fill="#6c757d">• 厚度: 3mm超薄设计  • 续航: 48小时连续使用  • 防护: IP67防水防尘  • 重量: 单只&lt;50g</text>
 
-    <text x="70" y="655" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">性能指标:</text>
-    <text x="80" y="675" font-family="Arial, sans-serif" font-size="11" fill="#6c757d">• 实时延迟: &lt;100ms</text>
-    <text x="80" y="690" font-family="Arial, sans-serif" font-size="11" fill="#6c757d">• 识别准确率: &gt;95.8%</text>
-    <text x="80" y="705" font-family="Arial, sans-serif" font-size="11" fill="#6c757d">• 采样频率: 100Hz</text>
-    <text x="80" y="720" font-family="Arial, sans-serif" font-size="11" fill="#6c757d">• 传感器精度: 16位ADC</text>
+    <text x="100" y="700" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">性能指标:</text>
+    <text x="110" y="715" font-family="Arial, sans-serif" font-size="12" fill="#6c757d">• 实时延迟: &lt;100ms  • 识别准确率: &gt;95.8%  • 采样频率: 100Hz  • 传感器精度: 16位ADC</text>
+
+    <text x="100" y="740" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">技术创新:</text>
+    <text x="110" y="755" font-family="Arial, sans-serif" font-size="12" fill="#6c757d">• 多模态传感器融合  • 自主研发柔性足压阵列  • 边缘端实时AI推理  • 智能信号处理算法</text>
   </g>
 
-  <!-- 创新特点 -->
-  <g id="innovations">
-    <rect x="400" y="500" width="750" height="250" rx="12" fill="#f8f9fa" stroke="#e9ecef" stroke-width="2"/>
-    <text x="775" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">核心技术创新</text>
-
-    <circle cx="430" cy="560" r="8" fill="#4A90E2"/>
-    <text x="450" y="565" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">多模态传感器融合</text>
-    <text x="450" y="580" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">IMU+足压阵列硬件级时间戳同步，确保数据严格对齐</text>
-
-    <circle cx="430" cy="600" r="8" fill="#7ED321"/>
-    <text x="450" y="605" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">自主研发柔性足压阵列</text>
-    <text x="450" y="620" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">压阻式导电聚合物复合材料，8×8高密度传感点阵</text>
-
-    <circle cx="430" cy="640" r="8" fill="#F5A623"/>
-    <text x="450" y="645" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">边缘端实时AI推理</text>
-    <text x="450" y="660" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">ESP32-S3双核并行处理，轻量级神经网络模型优化</text>
-
-    <circle cx="430" cy="680" r="8" fill="#9013FE"/>
-    <text x="450" y="685" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">智能信号处理算法</text>
-    <text x="450" y="700" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">自适应滤波、姿态融合、步态事件检测算法</text>
-  </g>
 </svg>

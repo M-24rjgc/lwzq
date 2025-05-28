@@ -1,19 +1,19 @@
-// 修复版本的手风琴功能
+// 优化版本的手风琴功能 - 默认全部收起
 document.addEventListener('DOMContentLoaded', function() {
     const featureTabs = document.querySelectorAll('.feature-tab');
 
-    // 设置第一个标签页为默认展开
-    if(featureTabs.length > 0) {
-        featureTabs[0].classList.add('active');
-        const firstContent = featureTabs[0].querySelector('.feature-content');
-        const firstIcon = featureTabs[0].querySelector('.toggle-icon');
-        if (firstContent) {
-            firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+    // 初始化所有标签页为收起状态
+    featureTabs.forEach(tab => {
+        tab.classList.remove('active');
+        const content = tab.querySelector('.feature-content');
+        const icon = tab.querySelector('.toggle-icon');
+        if (content) {
+            content.style.maxHeight = '0';
         }
-        if (firstIcon) {
-            firstIcon.textContent = '-';
+        if (icon) {
+            icon.textContent = '+';
         }
-    }
+    });
 
     featureTabs.forEach(tab => {
         const header = tab.querySelector('.feature-header');

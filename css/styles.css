@@ -103,12 +103,12 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin: 40px 0;
-    gap: 30px;
+    margin: 30px 0;
+    gap: 25px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    padding: 30px;
+    padding: 25px;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -264,7 +264,7 @@ img {
 
 /* 智谱AI风格的section设计 */
 section {
-    padding: 120px 0;
+    padding: 80px 0;
 }
 
 section:nth-child(even) {
@@ -273,7 +273,7 @@ section:nth-child(even) {
 
 .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -653,9 +653,9 @@ header.nav-hidden {
 
 .cta-buttons {
     display: flex;
-    gap: 32px;
+    gap: 24px;
     flex-wrap: wrap;
-    margin-top: 60px;
+    margin-top: 40px;
     justify-content: center;
     align-items: center;
 }
@@ -905,8 +905,8 @@ header.nav-hidden {
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 30px;
+    gap: 25px;
+    margin-top: 25px;
 }
 
 .feature-item {
@@ -1001,7 +1001,7 @@ header.nav-hidden {
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 25px;
     position: relative;
     z-index: 1;
 }
@@ -1105,8 +1105,8 @@ header.nav-hidden {
 .team-overview {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 30px;
+    gap: 25px;
+    margin-top: 25px;
 }
 
 .team-card {
@@ -1643,17 +1643,37 @@ footer {
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(37, 99, 235, 0.02) 100%);
 }
 
+.feature-title-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .feature-header h3 {
     font-size: 1.3rem;
     font-weight: 500;
     color: var(--text-dark);
     transition: color var(--transition-smooth);
     margin: 0;
-    flex: 1;
+}
+
+.feature-summary {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.4;
+    opacity: 0.9;
+    transition: all var(--transition-smooth);
 }
 
 .feature-tab.active .feature-header h3 {
     color: var(--primary-color);
+}
+
+.feature-tab.active .feature-summary {
+    color: var(--primary-color);
+    opacity: 0.8;
 }
 
 .toggle-icon {
@@ -1686,6 +1706,96 @@ footer {
 .feature-tab.active .feature-content {
     max-height: 1000px;
     padding: 0 30px 30px;
+}
+
+/* 功能详解内容布局 */
+.feature-detail {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.feature-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-smooth);
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-smooth);
+}
+
+.feature-image:hover img {
+    transform: scale(1.05);
+}
+
+/* 如果没有图片，显示占位符 */
+.feature-image:empty::before {
+    content: '功能展示图';
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.feature-text {
+    padding: 10px 0;
+}
+
+.feature-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+    transition: all var(--transition-smooth);
+}
+
+.feature-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* 为每个段落添加左侧装饰线 */
+.feature-text p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 4px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+/* 突出显示关键信息 */
+.feature-text p:first-child {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.feature-text p:first-child::before {
+    background: var(--secondary-color);
+    height: 24px;
+    width: 5px;
 }
 
 @keyframes fadeIn {
@@ -2321,6 +2431,20 @@ footer {
     height: 400px;
 }
 
+.ip-strategy-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.ip-strategy-image:hover {
+    transform: scale(1.02);
+    box-shadow: var(--box-shadow-lg);
+}
+
 .ip-categories {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -2378,6 +2502,20 @@ footer {
 .member-photo .placeholder-img {
     height: 300px;
     border-radius: 10px;
+}
+
+.member-photo .member-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.member-photo .member-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .member-info h3 {
@@ -3580,53 +3718,6 @@ footer {
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-.page-nav {
-    padding: 10px 0;
-}
-
-.page-nav ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.page-nav li {
-    position: relative;
-}
-
-.page-nav a {
-    display: block;
-    padding: 10px 20px;
-    color: var(--text-dark);
-    font-weight: 500;
-    font-size: 1rem;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.page-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 3px;
-    background: var(--primary-color);
-    transition: all 0.3s ease;
-}
-
-.page-nav a:hover,
-.page-nav a.active {
-    color: var(--primary-color);
-}
-
-.page-nav a:hover::after,
-.page-nav a.active::after {
-    width: 70%;
-}
-
 /* Product Page Navigation Enhancement */
 #page-nav-section {
     background: #fff;
@@ -3637,14 +3728,14 @@ footer {
 }
 
 .page-nav {
-    padding: 10px 0;
+    padding: 3px 0;
 }
 
 .page-nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
 }
 
 .page-nav li {
@@ -3653,7 +3744,7 @@ footer {
 
 .page-nav a {
     display: block;
-    padding: 10px 20px;
+    padding: 4px 18px;
     color: var(--text-dark);
     font-weight: 500;
     font-size: 1rem;

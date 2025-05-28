@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>间距优化测试 - 灵维智驱科技</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/enhancements.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 测试样式 - 显示section边界 */
+        .test-mode section {
+            border: 2px dashed rgba(37, 99, 235, 0.3);
+            position: relative;
+        }
+        
+        .test-mode section::before {
+            content: attr(data-section-name);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .spacing-info {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .toggle-test {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+    <div class="spacing-info">
+        <h4>间距优化信息</h4>
+        <p><strong>桌面端:</strong> 80px</p>
+        <p><strong>平板端:</strong> 60px</p>
+        <p><strong>手机端:</strong> 40px</p>
+        <p><strong>小屏:</strong> 30px</p>
+        <hr style="margin: 10px 0;">
+        <p>调整前: 120px</p>
+        <p>优化幅度: 33%</p>
+    </div>
+    
+    <button class="toggle-test btn btn-primary" onclick="toggleTestMode()">
+        切换测试模式
+    </button>
+
+    <header>
+        <nav id="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">灵维智驱科技</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="#" class="active">间距测试</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" data-section-name="Hero Section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>间距优化测试</h1>
+                <div class="hero-subtitle">验证页面上下间距的优化效果</div>
+                <div class="cta-buttons">
+                    <a href="#test1" class="hero-btn-primary">
+                        <span>查看优化效果</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="test1" class="stats-dark" data-section-name="Stats Section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">33</div>
+                    <div class="stat-label">间距优化幅度 %</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">80</div>
+                    <div class="stat-label">桌面端新间距 px</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">40</div>
+                    <div class="stat-label">移动端新间距 px</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">响应式断点</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="test2" data-section-name="Product Highlights">
+        <div class="container">
+            <div class="section-header">
+                <h2>间距优化效果展示</h2>
+                <p>通过减少section间距，页面内容更加紧凑，用户体验更佳</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h3>紧凑布局</h3>
+                    <p>减少不必要的空白，让内容更集中</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>响应式优化</h3>
+                    <p>不同设备采用不同间距，确保最佳体验</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>视觉平衡</h3>
+                    <p>保持视觉层次的同时，提高信息密度</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="test3" class="bg-light" data-section-name="Tech Advantages">
+        <div class="container">
+            <div class="section-header">
+                <h2>技术实现细节</h2>
+                <p>通过CSS变量和响应式设计实现的间距优化方案</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>CSS变量</h3>
+                    <p>使用CSS自定义属性统一管理间距值</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-tablet-alt"></i>
+                    </div>
+                    <h3>媒体查询</h3>
+                    <p>针对不同屏幕尺寸设置合适的间距</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>渐进优化</h3>
+                    <p>从大屏到小屏逐步减少间距值</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>间距优化测试完成</h2>
+                    <p>页面布局更加紧凑，用户体验得到提升</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTestMode() {
+            document.body.classList.toggle('test-mode');
+            const btn = document.querySelector('.toggle-test');
+            if (document.body.classList.contains('test-mode')) {
+                btn.textContent = '关闭测试模式';
+            } else {
+                btn.textContent = '切换测试模式';
+            }
+        }
+        
+        // 显示当前屏幕尺寸信息
+        function updateScreenInfo() {
+            const width = window.innerWidth;
+            let breakpoint = '';
+            if (width >= 1200) breakpoint = '大屏桌面 (≥1200px)';
+            else if (width >= 992) breakpoint = '中屏桌面 (992-1199px)';
+            else if (width >= 768) breakpoint = '平板 (768-991px)';
+            else if (width >= 576) breakpoint = '手机 (576-767px)';
+            else breakpoint = '小屏手机 (<576px)';
+            
+            console.log(`当前屏幕: ${width}px - ${breakpoint}`);
+        }
+        
+        window.addEventListener('resize', updateScreenInfo);
+        updateScreenInfo();
+    </script>
+</body>
+</html>
