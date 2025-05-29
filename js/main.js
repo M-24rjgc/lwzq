@@ -319,6 +319,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化地图功能
     initMapSection();
 
+    // 初始化轮播图
+    initCarousel();
+
+    // 初始化下拉菜单
+    initDropdownMenus();
+
     // 产品展示区域动画效果
     const productShowcase = document.querySelector('.product-showcase');
     if (productShowcase) {
@@ -1101,3 +1107,616 @@ function openExternalMap(routeType = 'marker') {
 
 // 路线规划功能（由HTML按钮调用）
 // 这个函数已经被openExternalMap替代，保留以防兼容性问题
+
+// 轮播图功能 - 优化版本
+function initCarousel() {
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (!carouselContainer) return;
+
+    const track = carouselContainer.querySelector('.carousel-track');
+    const slides = carouselContainer.querySelectorAll('.carousel-slide');
+    const prevBtn = carouselContainer.querySelector('.carousel-btn.prev');
+    const nextBtn = carouselContainer.querySelector('.carousel-btn.next');
+    const indicators = carouselContainer.querySelectorAll('.indicator');
+
+    if (!track || slides.length === 0) return;
+
+    let currentSlide = 0;
+    let autoplayTimer;
+    let isTransitioning = false;
+    let isUserInteracting = false;
+    let autoplayDelay = 5000; // 5秒自动播放间隔
+    let userInteractionTimeout;
+
+    // 添加加载状态
+    carouselContainer.classList.add('loading');
+
+    // 预加载图片
+    const preloadImages = () => {
+        const images = carouselContainer.querySelectorAll('img');
+        let loadedCount = 0;
+        const totalImages = images.length;
+
+        if (totalImages === 0) {
+            carouselContainer.classList.remove('loading');
+            return;
+        }
+
+        images.forEach(img => {
+            if (img.complete) {
+                loadedCount++;
+            } else {
+                img.addEventListener('load', () => {
+                    loadedCount++;
+                    if (loadedCount === totalImages) {
+                        carouselContainer.classList.remove('loading');
+                    }
+                });
+                img.addEventListener('error', () => {
+                    loadedCount++;
+                    if (loadedCount === totalImages) {
+                        carouselContainer.classList.remove('loading');
+                    }
+                });
+            }
+        });
+
+        if (loadedCount === totalImages) {
+            carouselContainer.classList.remove('loading');
+        }
+    };
+
+    // 优化的显示幻灯片函数
+    function showSlide(index, direction = 'next') {
+        if (isTransitioning || index === currentSlide) return;
+
+        isTransitioning = true;
+        const previousSlide = currentSlide;
+
+        // 添加过渡类
+        slides[previousSlide].classList.add(direction === 'next' ? 'exiting' : 'entering');
+        slides[index].classList.add(direction === 'next' ? 'entering' : 'exiting');
+
+        // 使用 requestAnimationFrame 确保平滑动画
+        requestAnimationFrame(() => {
+            // 移除所有活动状态
+            slides.forEach(slide => {
+                slide.classList.remove('active', 'entering', 'exiting');
+            });
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+
+            // 添加当前幻灯片的活动状态
+            slides[index].classList.add('active');
+            if (indicators[index]) {
+                indicators[index].classList.add('active');
+            }
+
+            // 移动轨道 - 使用 transform 而不是直接设置样式
+            const translateX = -index * 100;
+            track.style.transform = `translateX(${translateX}%)`;
+
+            currentSlide = index;
+
+            // 重置过渡状态
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 600); // 与CSS过渡时间匹配
+        });
+    }
+
+    // 智能自动播放管理
+    function startAutoplay() {
+        if (autoplayTimer) clearInterval(autoplayTimer);
+
+        autoplayTimer = setInterval(() => {
+            if (!isUserInteracting && !document.hidden) {
+                nextSlide();
+            }
+        }, autoplayDelay);
+
+        carouselContainer.classList.remove('paused');
+    }
+
+    function stopAutoplay() {
+        if (autoplayTimer) {
+            clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+        carouselContainer.classList.add('paused');
+    }
+
+    function pauseAutoplay() {
+        stopAutoplay();
+        isUserInteracting = true;
+
+        // 清除之前的超时
+        if (userInteractionTimeout) {
+            clearTimeout(userInteractionTimeout);
+        }
+
+        // 3秒后恢复自动播放
+        userInteractionTimeout = setTimeout(() => {
+            isUserInteracting = false;
+            startAutoplay();
+        }, 3000);
+    }
+
+    // 优化的切换函数
+    function nextSlide() {
+        const nextIndex = (currentSlide + 1) % slides.length;
+        showSlide(nextIndex, 'next');
+    }
+
+    function prevSlide() {
+        const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prevIndex, 'prev');
+    }
+
+    function goToSlide(index) {
+        if (index !== currentSlide) {
+            const direction = index > currentSlide ? 'next' : 'prev';
+            showSlide(index, direction);
+        }
+    }
+
+    // 优化的事件监听器
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            nextSlide();
+            pauseAutoplay();
+        });
+
+        // 添加键盘支持
+        nextBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+                pauseAutoplay();
+            }
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            prevSlide();
+            pauseAutoplay();
+        });
+
+        prevBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                prevSlide();
+                pauseAutoplay();
+            }
+        });
+    }
+
+    // 优化指示器点击事件
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToSlide(index);
+            pauseAutoplay();
+        });
+
+        indicator.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                goToSlide(index);
+                pauseAutoplay();
+            }
+        });
+    });
+
+    // 智能悬停管理
+    carouselContainer.addEventListener('mouseenter', () => {
+        stopAutoplay();
+    });
+
+    carouselContainer.addEventListener('mouseleave', () => {
+        if (!isUserInteracting) {
+            startAutoplay();
+        }
+    });
+
+    // 页面可见性变化处理
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopAutoplay();
+        } else if (!isUserInteracting) {
+            startAutoplay();
+        }
+    });
+
+    // 优化的触摸滑动支持
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let touchStartY = 0;
+    let touchEndY = 0;
+    let isSwiping = false;
+
+    carouselContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+        touchStartY = e.changedTouches[0].clientY;
+        isSwiping = false;
+        stopAutoplay(); // 触摸时暂停自动播放
+    }, { passive: true });
+
+    carouselContainer.addEventListener('touchmove', (e) => {
+        if (!isSwiping) {
+            const currentX = e.changedTouches[0].clientX;
+            const currentY = e.changedTouches[0].clientY;
+            const diffX = Math.abs(currentX - touchStartX);
+            const diffY = Math.abs(currentY - touchStartY);
+
+            // 只有水平滑动距离大于垂直滑动距离时才认为是轮播滑动
+            if (diffX > diffY && diffX > 10) {
+                isSwiping = true;
+                e.preventDefault(); // 防止页面滚动
+            }
+        }
+    }, { passive: false });
+
+    carouselContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        touchEndY = e.changedTouches[0].clientY;
+
+        if (isSwiping) {
+            handleSwipe();
+        }
+
+        // 延迟恢复自动播放
+        setTimeout(() => {
+            if (!isUserInteracting) {
+                startAutoplay();
+            }
+        }, 1000);
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diffX = touchStartX - touchEndX;
+        const diffY = Math.abs(touchStartY - touchEndY);
+
+        // 确保是水平滑动而不是垂直滑动
+        if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > diffY) {
+            if (diffX > 0) {
+                nextSlide(); // 向左滑动，显示下一张
+            } else {
+                prevSlide(); // 向右滑动，显示上一张
+            }
+            pauseAutoplay();
+        }
+    }
+
+    // 优化的键盘导航
+    carouselContainer.addEventListener('keydown', (e) => {
+        // 只有当轮播图获得焦点时才响应键盘事件
+        if (document.activeElement === carouselContainer ||
+            carouselContainer.contains(document.activeElement)) {
+
+            switch(e.key) {
+                case 'ArrowLeft':
+                    prevSlide();
+                    pauseAutoplay();
+                    e.preventDefault();
+                    break;
+                case 'ArrowRight':
+                    nextSlide();
+                    pauseAutoplay();
+                    e.preventDefault();
+                    break;
+                case 'Home':
+                    goToSlide(0);
+                    pauseAutoplay();
+                    e.preventDefault();
+                    break;
+                case 'End':
+                    goToSlide(slides.length - 1);
+                    pauseAutoplay();
+                    e.preventDefault();
+                    break;
+                case ' ':
+                case 'Enter':
+                    // 空格键或回车键暂停/恢复自动播放
+                    if (autoplayTimer) {
+                        stopAutoplay();
+                    } else {
+                        startAutoplay();
+                    }
+                    e.preventDefault();
+                    break;
+            }
+        }
+    });
+
+    // 设置可访问性属性
+    carouselContainer.setAttribute('tabindex', '0');
+    carouselContainer.setAttribute('role', 'region');
+    carouselContainer.setAttribute('aria-label', '新闻轮播');
+    carouselContainer.setAttribute('aria-live', 'polite');
+
+    // 为每个幻灯片设置ARIA属性
+    slides.forEach((slide, index) => {
+        slide.setAttribute('role', 'tabpanel');
+        slide.setAttribute('aria-label', `第${index + 1}张，共${slides.length}张`);
+        slide.setAttribute('aria-hidden', index !== 0 ? 'true' : 'false');
+    });
+
+    // 为指示器设置ARIA属性
+    indicators.forEach((indicator, index) => {
+        indicator.setAttribute('role', 'tab');
+        indicator.setAttribute('aria-label', `跳转到第${index + 1}张幻灯片`);
+        indicator.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+    });
+
+    // 更新ARIA属性的函数
+    function updateAriaAttributes(activeIndex) {
+        slides.forEach((slide, index) => {
+            slide.setAttribute('aria-hidden', index !== activeIndex ? 'true' : 'false');
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.setAttribute('aria-selected', index === activeIndex ? 'true' : 'false');
+        });
+    }
+
+    // 重写showSlide函数以包含ARIA更新
+    const originalShowSlide = showSlide;
+    showSlide = function(index, direction = 'next') {
+        originalShowSlide(index, direction);
+        updateAriaAttributes(index);
+    };
+
+    // 预加载图片并初始化
+    preloadImages();
+
+    // 初始化显示第一张幻灯片
+    showSlide(0);
+
+    // 延迟启动自动播放，确保页面完全加载
+    setTimeout(() => {
+        startAutoplay();
+    }, 1000);
+
+    // 清理函数（页面卸载时调用）
+    window.addEventListener('beforeunload', () => {
+        stopAutoplay();
+        if (userInteractionTimeout) {
+            clearTimeout(userInteractionTimeout);
+        }
+    });
+}
+
+// 下拉菜单功能 - 优化版本
+function initDropdownMenus() {
+    const dropdownItems = document.querySelectorAll('.nav-dropdown');
+
+    dropdownItems.forEach(dropdown => {
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        const dropdownIcon = dropdown.querySelector('.dropdown-icon');
+        const mainLink = dropdown.querySelector('a');
+
+        if (!dropdownMenu) return;
+
+        let hoverTimer;
+        let isOpen = false;
+        let focusTimer;
+
+        // 设置初始ARIA属性
+        if (mainLink) {
+            mainLink.setAttribute('aria-haspopup', 'true');
+            mainLink.setAttribute('aria-expanded', 'false');
+        }
+
+        dropdownMenu.setAttribute('role', 'menu');
+        dropdownMenu.setAttribute('aria-hidden', 'true');
+
+        // 为菜单项设置ARIA属性
+        const menuItems = dropdownMenu.querySelectorAll('a');
+        menuItems.forEach(item => {
+            item.setAttribute('role', 'menuitem');
+            item.setAttribute('tabindex', '-1');
+        });
+
+        // 显示下拉菜单
+        function showDropdown() {
+            if (isOpen) return;
+
+            isOpen = true;
+            clearTimeout(hoverTimer);
+
+            dropdownMenu.style.display = 'block';
+
+            // 使用 requestAnimationFrame 确保平滑动画
+            requestAnimationFrame(() => {
+                dropdownMenu.classList.add('show');
+                dropdownMenu.setAttribute('aria-hidden', 'false');
+
+                if (mainLink) {
+                    mainLink.setAttribute('aria-expanded', 'true');
+                }
+            });
+        }
+
+        // 隐藏下拉菜单
+        function hideDropdown() {
+            if (!isOpen) return;
+
+            isOpen = false;
+            dropdownMenu.classList.remove('show');
+            dropdownMenu.setAttribute('aria-hidden', 'true');
+
+            if (mainLink) {
+                mainLink.setAttribute('aria-expanded', 'false');
+            }
+
+            hoverTimer = setTimeout(() => {
+                dropdownMenu.style.display = 'none';
+                // 重置菜单项的tabindex
+                menuItems.forEach(item => {
+                    item.setAttribute('tabindex', '-1');
+                });
+            }, 300); // 与CSS过渡时间匹配
+        }
+
+        // 鼠标事件处理
+        dropdown.addEventListener('mouseenter', () => {
+            showDropdown();
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            hideDropdown();
+        });
+
+        // 优化的键盘导航支持
+        if (mainLink) {
+            mainLink.addEventListener('focus', () => {
+                showDropdown();
+                // 设置第一个菜单项为可聚焦
+                if (menuItems.length > 0) {
+                    menuItems[0].setAttribute('tabindex', '0');
+                }
+            });
+
+            mainLink.addEventListener('keydown', (e) => {
+                switch(e.key) {
+                    case 'ArrowDown':
+                    case 'Enter':
+                    case ' ':
+                        e.preventDefault();
+                        showDropdown();
+                        // 聚焦到第一个菜单项
+                        if (menuItems.length > 0) {
+                            menuItems[0].setAttribute('tabindex', '0');
+                            menuItems[0].focus();
+                        }
+                        break;
+                    case 'Escape':
+                        hideDropdown();
+                        break;
+                }
+            });
+        }
+
+        // 优化的菜单项键盘导航
+        menuItems.forEach((link, index) => {
+            link.addEventListener('keydown', (e) => {
+                switch(e.key) {
+                    case 'ArrowDown':
+                        e.preventDefault();
+                        // 移动到下一个菜单项
+                        link.setAttribute('tabindex', '-1');
+                        const nextIndex = (index + 1) % menuItems.length;
+                        menuItems[nextIndex].setAttribute('tabindex', '0');
+                        menuItems[nextIndex].focus();
+                        break;
+
+                    case 'ArrowUp':
+                        e.preventDefault();
+                        // 移动到上一个菜单项或主链接
+                        link.setAttribute('tabindex', '-1');
+                        if (index === 0) {
+                            hideDropdown();
+                            mainLink.focus();
+                        } else {
+                            const prevIndex = index - 1;
+                            menuItems[prevIndex].setAttribute('tabindex', '0');
+                            menuItems[prevIndex].focus();
+                        }
+                        break;
+
+                    case 'Home':
+                        e.preventDefault();
+                        // 跳转到第一个菜单项
+                        link.setAttribute('tabindex', '-1');
+                        menuItems[0].setAttribute('tabindex', '0');
+                        menuItems[0].focus();
+                        break;
+
+                    case 'End':
+                        e.preventDefault();
+                        // 跳转到最后一个菜单项
+                        link.setAttribute('tabindex', '-1');
+                        const lastIndex = menuItems.length - 1;
+                        menuItems[lastIndex].setAttribute('tabindex', '0');
+                        menuItems[lastIndex].focus();
+                        break;
+
+                    case 'Escape':
+                        e.preventDefault();
+                        hideDropdown();
+                        mainLink.focus();
+                        break;
+
+                    case 'Tab':
+                        // Tab键关闭菜单
+                        hideDropdown();
+                        break;
+                }
+            });
+
+            // 优化的焦点管理
+            link.addEventListener('blur', (e) => {
+                // 使用更精确的焦点检测
+                clearTimeout(focusTimer);
+                focusTimer = setTimeout(() => {
+                    if (!dropdown.contains(document.activeElement)) {
+                        hideDropdown();
+                    }
+                }, 50);
+            });
+
+            link.addEventListener('focus', () => {
+                clearTimeout(focusTimer);
+                // 确保只有当前聚焦的项目是可聚焦的
+                menuItems.forEach((item, i) => {
+                    item.setAttribute('tabindex', i === index ? '0' : '-1');
+                });
+            });
+        });
+    });
+
+    // 优化的全局点击处理
+    document.addEventListener('click', (e) => {
+        dropdownItems.forEach(dropdown => {
+            if (!dropdown.contains(e.target)) {
+                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                const mainLink = dropdown.querySelector('a');
+
+                if (dropdownMenu && dropdownMenu.classList.contains('show')) {
+                    dropdownMenu.classList.remove('show');
+                    dropdownMenu.setAttribute('aria-hidden', 'true');
+
+                    if (mainLink) {
+                        mainLink.setAttribute('aria-expanded', 'false');
+                    }
+
+                    setTimeout(() => {
+                        dropdownMenu.style.display = 'none';
+                    }, 300);
+                }
+            }
+        });
+    });
+
+    // 处理移动端触摸事件
+    if ('ontouchstart' in window) {
+        dropdownItems.forEach(dropdown => {
+            const mainLink = dropdown.querySelector('a');
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+            if (mainLink && dropdownMenu) {
+                mainLink.addEventListener('touchstart', (e) => {
+                    // 在移动端，第一次点击显示菜单，第二次点击跳转
+                    if (!dropdownMenu.classList.contains('show')) {
+                        e.preventDefault();
+                        showDropdown();
+                    }
+                });
+            }
+        });
+    }
+}

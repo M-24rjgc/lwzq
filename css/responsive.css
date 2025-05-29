@@ -104,6 +104,39 @@
         margin: 1rem 0;
     }
 
+    /* 下拉菜单响应式 */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: transparent;
+        border: none;
+        padding: 0;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    .dropdown-menu li a {
+        padding: 8px 0;
+        font-size: 0.9rem;
+        color: var(--text-gray);
+    }
+
+    .dropdown-menu li a:hover {
+        padding-left: 0;
+        color: var(--primary-color);
+    }
+
+    .dropdown-menu li a:hover::after {
+        display: none;
+    }
+
+    .dropdown-icon {
+        display: none;
+    }
+
     /* 主页特定样式 */
     #hero .hero-content {
         text-align: center;
@@ -276,6 +309,141 @@
 
     .nav-menu li {
         margin: 1rem 0;
+    }
+
+    /* 下拉菜单响应式优化 */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: transparent;
+        border: none;
+        padding: 0;
+        margin-left: 20px;
+        margin-top: 10px;
+        min-width: auto;
+        backdrop-filter: none;
+        background-image: none;
+    }
+
+    .dropdown-menu::before {
+        display: none;
+    }
+
+    .dropdown-menu li a {
+        padding: 10px 0;
+        font-size: 0.9rem;
+        color: var(--text-gray);
+        border-bottom: none;
+        transition: all 0.2s ease;
+    }
+
+    .dropdown-menu li a:hover {
+        padding-left: 0;
+        color: var(--primary-color);
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .dropdown-menu li a:hover::after {
+        display: none;
+    }
+
+    .dropdown-menu li a:focus {
+        background: transparent;
+        box-shadow: none;
+        color: var(--primary-color);
+    }
+
+    .dropdown-icon {
+        display: none;
+    }
+
+    /* 轮播图响应式优化 */
+    .carousel-container {
+        min-height: 350px;
+    }
+
+    .carousel-slide .news-item {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .carousel-slide .news-image {
+        height: 220px;
+        order: -1;
+    }
+
+    .carousel-slide .news-image::after {
+        background: linear-gradient(45deg,
+            rgba(0, 0, 0, 0.15) 0%,
+            transparent 30%,
+            transparent 70%,
+            rgba(0, 0, 0, 0.1) 100%);
+    }
+
+    .carousel-slide .news-content {
+        padding: 20px 16px;
+    }
+
+    .carousel-slide .news-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+
+    .carousel-slide .news-excerpt {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+
+    .carousel-slide .news-date {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    .carousel-slide .read-more {
+        font-size: 0.9rem;
+    }
+
+    /* 优化移动端控制按钮 */
+    .carousel-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 0.9rem;
+    }
+
+    .carousel-controls {
+        padding: 0 12px;
+        /* 移动端始终显示控制按钮 */
+        opacity: 1;
+    }
+
+    .carousel-btn:hover {
+        transform: scale(1.05);
+    }
+
+    /* 优化移动端指示器 */
+    .indicator {
+        width: 8px;
+        height: 8px;
+        padding: 8px;
+        margin: -8px;
+    }
+
+    .indicator.active {
+        width: 20px;
+        border-radius: 10px;
+    }
+
+    .carousel-indicators {
+        margin-top: 20px;
+        gap: 6px;
     }
 
     /* 主页特定样式 */

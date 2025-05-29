@@ -23,8 +23,8 @@
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     position: relative;
     z-index: 1;
 }
@@ -96,6 +96,20 @@
 }
 
 /* 响应式调整 */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .stats-grid {
+        gap: 25px;
+    }
+
+    .stat-item {
+        padding: 35px 15px;
+    }
+
+    .stat-number {
+        font-size: 3.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .stats-dark {
         padding: 40px 0;

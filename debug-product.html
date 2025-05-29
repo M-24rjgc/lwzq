@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品页面调试版本</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <style>
+        #debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            max-width: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 9999;
+            border-radius: 5px;
+        }
+        .debug-entry {
+            margin: 2px 0;
+            padding: 2px 0;
+            border-bottom: 1px solid #333;
+        }
+        .error { color: #ff6b6b; }
+        .success { color: #51cf66; }
+        .info { color: #74c0fc; }
+        .warning { color: #ffd43b; }
+    </style>
+</head>
+<body>
+    <div id="debug-info">
+        <div class="debug-entry info">调试信息面板</div>
+    </div>
+
+    <header>
+        <nav id="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">灵维智驱科技</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="product.html" class="active">步态精灵</a></li>
+                    <li><a href="technology.html">技术与研发</a></li>
+                    <li><a href="team.html">团队介绍</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="product-hero" class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>步态精灵智能跑步姿态分析系统</h1>
+                <p>兼顾损伤预防与表现提升的"双效合一"智能系统</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="product-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>产品概览</h2>
+                <p>软硬件一体化的综合解决方案</p>
+            </div>
+            <div class="product-model-container">
+                <div id="product-3d-model">
+                    <div class="product-model-wrapper">
+                        <div class="product-model-title">
+                            <h3>步态精灵智能鞋垫</h3>
+                        </div>
+                        <div class="product-model-rotating" id="3d-container">
+                            <!-- Three.js画布将在此渲染 -->
+                        </div>
+                        <div class="model-controls">
+                            <button class="model-btn" id="rotateLeft" title="向左旋转">←</button>
+                            <button class="model-btn" id="rotateRight" title="向右旋转">→</button>
+                            <button class="model-btn" id="zoomIn" title="放大">+</button>
+                            <button class="model-btn" id="zoomOut" title="缩小">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p>步态精灵是一个软硬件一体化的智能跑步姿态分析系统，通过多模态数据融合与边缘-云协同计算，实现了专业级的跑姿分析与指导。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const debugInfo = document.getElementById('debug-info');
+        
+        function addDebugEntry(message, type = 'info') {
+            const entry = document.createElement('div');
+            entry.className = `debug-entry ${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            debugInfo.appendChild(entry);
+            debugInfo.scrollTop = debugInfo.scrollHeight;
+            console.log(`[${type.toUpperCase()}] ${message}`);
+        }
+
+        // 检查Three.js
+        addDebugEntry('开始调试...', 'info');
+        addDebugEntry(`Three.js版本: ${THREE ? THREE.REVISION : '未加载'}`, THREE ? 'success' : 'error');
+
+        // 检查容器
+        const container = document.getElementById('product-3d-model');
+        const renderContainer = document.getElementById('3d-container');
+        
+        if (container) {
+            addDebugEntry('找到主容器', 'success');
+            addDebugEntry(`主容器尺寸: ${container.clientWidth}x${container.clientHeight}`, 'info');
+        } else {
+            addDebugEntry('未找到主容器', 'error');
+        }
+
+        if (renderContainer) {
+            addDebugEntry('找到渲染容器', 'success');
+            addDebugEntry(`渲染容器尺寸: ${renderContainer.clientWidth}x${renderContainer.clientHeight}`, 'info');
+        } else {
+            addDebugEntry('未找到渲染容器', 'error');
+        }
+
+        // 简单的Three.js测试
+        if (typeof THREE !== 'undefined' && renderContainer) {
+            try {
+                addDebugEntry('开始创建Three.js场景...', 'info');
+                
+                const scene = new THREE.Scene();
+                scene.background = new THREE.Color(0xf0f0f0);
+                addDebugEntry('场景创建成功', 'success');
+
+                const camera = new THREE.PerspectiveCamera(75, 
+                    (renderContainer.clientWidth || 400) / (renderContainer.clientHeight || 300), 
+                    0.1, 1000);
+                camera.position.z = 5;
+                addDebugEntry('摄像机创建成功', 'success');
+
+                const renderer = new THREE.WebGLRenderer({ antialias: true });
+                renderer.setSize(renderContainer.clientWidth || 400, renderContainer.clientHeight || 300);
+                renderContainer.appendChild(renderer.domElement);
+                addDebugEntry('渲染器创建成功', 'success');
+
+                // 创建一个简单的立方体
+                const geometry = new THREE.BoxGeometry();
+                const material = new THREE.MeshBasicMaterial({ color: 0x1E88E5 });
+                const cube = new THREE.Mesh(geometry, material);
+                scene.add(cube);
+                addDebugEntry('测试立方体创建成功', 'success');
+
+                // 动画循环
+                function animate() {
+                    requestAnimationFrame(animate);
+                    cube.rotation.x += 0.01;
+                    cube.rotation.y += 0.01;
+                    renderer.render(scene, camera);
+                }
+                animate();
+                addDebugEntry('动画循环启动', 'success');
+
+                // 测试扩展加载
+                setTimeout(() => {
+                    addDebugEntry('开始测试扩展加载...', 'info');
+                    
+                    const orbitScript = document.createElement('script');
+                    orbitScript.src = 'https://unpkg.com/three@0.132.2/examples/js/controls/OrbitControls.js';
+                    orbitScript.onload = () => {
+                        addDebugEntry('OrbitControls加载成功', 'success');
+                        if (typeof THREE.OrbitControls !== 'undefined') {
+                            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+                            addDebugEntry('OrbitControls初始化成功', 'success');
+                        }
+                    };
+                    orbitScript.onerror = () => {
+                        addDebugEntry('OrbitControls加载失败', 'error');
+                    };
+                    document.head.appendChild(orbitScript);
+                }, 1000);
+
+            } catch (error) {
+                addDebugEntry(`Three.js错误: ${error.message}`, 'error');
+            }
+        } else {
+            addDebugEntry('Three.js或容器不可用', 'error');
+        }
+
+        // 窗口调整大小测试
+        window.addEventListener('resize', () => {
+            addDebugEntry('窗口大小调整', 'info');
+        });
+    </script>
+</body>
+</html>

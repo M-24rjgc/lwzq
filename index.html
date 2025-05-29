@@ -36,8 +36,24 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="active">首页</a></li>
-                    <li><a href="product.html">步态精灵</a></li>
-                    <li><a href="technology.html">技术与研发</a></li>
+                    <li class="nav-dropdown">
+                        <a href="product.html">步态精灵 <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="product.html#overview">产品概览</a></li>
+                            <li><a href="product.html#features">核心功能</a></li>
+                            <li><a href="product.html#specs">产品规格</a></li>
+                            <li><a href="product.html#testimonials">用户见证</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-dropdown">
+                        <a href="technology.html">技术与研发 <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="technology.html#algorithm">核心算法</a></li>
+                            <li><a href="technology.html#architecture">系统架构</a></li>
+                            <li><a href="technology.html#innovation">技术创新</a></li>
+                            <li><a href="technology.html#research">研发成果</a></li>
+                        </ul>
+                    </li>
                     <li><a href="team.html">团队介绍</a></li>
                     <li><a href="contact.html">联系我们</a></li>
                 </ul>
@@ -221,41 +237,80 @@
                 <h2>最新动态</h2>
                 <p>了解灵维智驱科技的最新消息与技术突破</p>
             </div>
-            <div class="news-slider">                <div class="news-item">
-                    <div class="news-image">
-                        <img src="images/runner-using-smart-insole.png" alt="步态精灵2.0版本即将发布" />
-                        <div class="news-tag">产品更新</div>
-                    </div>
-                    <div class="news-content">
-                        <h3>步态精灵2.0版本即将发布</h3>
-                        <p class="news-date"><i class="far fa-calendar-alt"></i> 2025年5月15日</p>
-                        <p class="news-excerpt">全新升级的步态精灵2.0版本将于下月发布，带来更精准的跑姿分析与个性化建议，以及更长的电池续航与更全面的数据分析功能。</p>
-                        <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <div class="news-item">
+                                <div class="news-image">
+                                    <img src="images/runner-using-smart-insole.png" alt="步态精灵2.0版本即将发布" />
+                                    <div class="news-tag">产品更新</div>
+                                </div>
+                                <div class="news-content">
+                                    <h3>步态精灵2.0版本即将发布</h3>
+                                    <p class="news-date"><i class="far fa-calendar-alt"></i> 2025年5月15日</p>
+                                    <p class="news-excerpt">全新升级的步态精灵2.0版本将于下月发布，带来更精准的跑姿分析与个性化建议，以及更长的电池续航与更全面的数据分析功能。</p>
+                                    <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="news-item">
+                                <div class="news-image">
+                                    <img src="images/顾问邀请doubaoAI.png" alt="成功邀请三位教授担任学术顾问" />
+                                    <div class="news-tag">团队建设</div>
+                                </div>
+                                <div class="news-content">
+                                    <h3>成功邀请三位教授担任学术顾问</h3>
+                                    <p class="news-date"><i class="far fa-calendar-alt"></i> 2025年4月20日</p>
+                                    <p class="news-excerpt">灵维智驱科技成功邀请杨晓慧教授、刘海涛副教授、梁胜彬副教授担任公司学术顾问，为公司在人工智能算法、运动生物力学、智能硬件等领域提供专业指导。</p>
+                                    <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="news-item">
+                                <div class="news-image">
+                                    <img src="images/henu体育学院.png" alt="与河南大学体育学院达成合作" />
+                                    <div class="news-tag">合作动态</div>
+                                </div>
+                                <div class="news-content">
+                                    <h3>与河南大学体育学院达成合作</h3>
+                                    <p class="news-date"><i class="far fa-calendar-alt"></i> 2025年5月2日</p>
+                                    <p class="news-excerpt">灵维智驱科技与河南大学体育学院正式签署战略合作协议，邀请国家一级运动员进行产品测试，共同推进智能运动科技的研发与应用。</p>
+                                    <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="news-item">
+                                <div class="news-image">
+                                    <img src="images/smart-insole-product.png" alt="智能鞋垫核心技术展示" />
+                                    <div class="news-tag">技术展示</div>
+                                </div>
+                                <div class="news-content">
+                                    <h3>智能鞋垫核心技术展示</h3>
+                                    <p class="news-date"><i class="far fa-calendar-alt"></i> 2025年4月10日</p>
+                                    <p class="news-excerpt">步态精灵采用超薄柔性传感技术，内置高精度IMU和柔性压力传感阵列，仅3mm超薄设计，为跑步爱好者提供专业级姿态分析。</p>
+                                    <a href="product.html" class="read-more">了解产品 <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="news-item">
-                    <div class="news-image">
-                        <img src="images/顾问邀请doubaoAI.png" alt="成功邀请三位教授担任学术顾问" />
-                        <div class="news-tag">团队建设</div>
-                    </div>
-                    <div class="news-content">
-                        <h3>成功邀请三位教授担任学术顾问</h3>
-                        <p class="news-date"><i class="far fa-calendar-alt"></i> 2025年4月20日</p>
-                        <p class="news-excerpt">灵维智驱科技成功邀请杨晓慧教授、刘海涛副教授、梁胜彬副教授担任公司学术顾问，为公司在人工智能算法、运动生物力学、智能硬件等领域提供专业指导。</p>
-                        <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" aria-label="上一张">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" aria-label="下一张">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
-                <div class="news-item">
-                    <div class="news-image">
-                        <img src="images/henu体育学院.png" alt="与河南大学体育学院达成合作" />
-                        <div class="news-tag">合作动态</div>
-                    </div>
-                    <div class="news-content">
-                        <h3>与河南大学体育学院达成合作</h3>
-                        <p class="news-date"><i class="far fa-calendar-alt"></i> 2025年5月2日</p>
-                        <p class="news-excerpt">灵维智驱科技与河南大学体育学院正式签署战略合作协议，邀请国家一级运动员进行产品测试，共同推进智能运动科技的研发与应用。</p>
-                        <a href="#" class="read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <div class="carousel-indicators">
+                    <button class="indicator active" data-slide="0" aria-label="第1张"></button>
+                    <button class="indicator" data-slide="1" aria-label="第2张"></button>
+                    <button class="indicator" data-slide="2" aria-label="第3张"></button>
+                    <button class="indicator" data-slide="3" aria-label="第4张"></button>
                 </div>
             </div>
         </div>

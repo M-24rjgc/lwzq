@@ -18,10 +18,16 @@ class ZhipuBackground {
     
     init() {
         if (!window.THREE) {
-            console.warn('Three.js not loaded');
+            console.error('Three.js未加载，请检查CDN链接');
             return;
         }
-        
+    
+        this.container = document.getElementById('3d-container'); // 绑定新容器
+        if (!this.container) {
+            console.error('找不到3D容器元素');
+            return;
+        }
+    
         this.setupScene();
         this.createSpiral();
         this.createParticles();
@@ -30,6 +36,7 @@ class ZhipuBackground {
         this.handleResize();
     }
     
+    // 在setupScene方法中更新
     setupScene() {
         // 创建场景
         this.scene = new THREE.Scene();
@@ -48,9 +55,16 @@ class ZhipuBackground {
             alpha: true,
             antialias: true
         });
-        this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
-        this.renderer.setClearColor(0x000000, 0);
-        this.container.appendChild(this.renderer.domElement);
+        this.container.appendChild(this.renderer.domElement); // 挂载到指定容器
+    }
+    
+    // 新增窗口resize处理
+    handleResize() {
+        window.addEventListener('resize', () => {
+            this.camera.aspect = this.container.clientWidth / this.container.clientHeight;
+            this.camera.updateProjectionMatrix();
+            this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+        });
     }
     
     createSpiral() {
