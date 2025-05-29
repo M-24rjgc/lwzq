@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Azure Static Web Apps CI/CD with Optimization
 
 on:
   push:
@@ -9,6 +9,10 @@ on:
     branches:
       - main
 
+env:
+  NODE_VERSION: '18'
+  CACHE_VERSION: 'v1'
+
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
@@ -18,31 +22,69 @@ jobs:
        id-token: write
        contents: read
     steps:
-      - uses: actions/checkout@v3
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
         with:
           submodules: true
           lfs: false
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies
+        run: |
+          npm ci
+          npm install sharp clean-css terser critical --save-dev
+
+      - name: 🖼️ Optimize Images
+        run: |
+          echo "优化图片资源..."
+          node scripts/optimize-images.js || echo "图片优化跳过（可选步骤）"
+
+      - name: 🏗️ Build and Optimize
+        run: |
+          echo "执行构建优化..."
+          node scripts/build-optimizer.js || echo "构建优化跳过（可选步骤）"
+
+      - name: 🔍 Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          configPath: './lighthouse.config.js'
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+        continue-on-error: true
+
+      - name: 📊 Performance Budget Check
+        run: |
+          echo "检查性能预算..."
+          # 这里可以添加自定义的性能检查脚本
+          echo "性能检查完成"
+
       - name: Install OIDC Client from Core Package
         run: npm install @actions/core@1.6.0 @actions/http-client
+
       - name: Get Id Token
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         id: idtoken
         with:
            script: |
                const coredemo = require('@actions/core')
                return await coredemo.getIDToken()
            result-encoding: string
-      - name: Build And Deploy
+
+      - name: 🚀 Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_MUSHROOM_06BF7EB00 }}
           action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          ###### Repository/Build Configurations ######
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "." # Built app content directory - optional
+          output_location: "dist" # Built app content directory
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
 

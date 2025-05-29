@@ -1,0 +1,60 @@
+{
+  "name": "gait-spirit-website",
+  "version": "2.0.0",
+  "description": "步态精灵智能跑步姿态分析系统官网 - 优化版",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve . -p 3000",
+    "build": "node scripts/build-optimizer.js",
+    "optimize:images": "node scripts/optimize-images.js",
+    "lighthouse": "lhci autorun",
+    "lighthouse:desktop": "lighthouse http://localhost:3000 --preset=desktop --view",
+    "lighthouse:mobile": "lighthouse http://localhost:3000 --preset=mobile --view",
+    "test": "npm run lighthouse",
+    "test:performance": "lhci autorun --config=lighthouse.config.js",
+    "analyze": "npm run build && npm run test:performance",
+    "serve:dist": "npx serve dist -p 3001",
+    "clean": "rimraf dist",
+    "validate:html": "html-validate *.html",
+    "validate:css": "stylelint css/**/*.css",
+    "validate:js": "eslint js/**/*.js",
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "precommit": "npm run format && npm run validate:html && npm run validate:css"
+  },
+  "keywords": [
+    "步态精灵",
+    "跑步姿态分析",
+    "静态网站",
+    "性能优化",
+    "SEO优化",
+    "可访问性",
+    "WebP",
+    "响应式设计"
+  ],
+  "author": "灵维智驱科技有限公司",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@lhci/cli": "^0.12.0",
+    "clean-css": "^5.3.2",
+    "critical": "^6.1.0",
+    "eslint": "^8.56.0",
+    "html-validate": "^8.7.4",
+    "lighthouse": "^11.4.0",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "sharp": "^0.33.1",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0",
+    "terser": "^5.26.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}

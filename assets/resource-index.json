@@ -1,0 +1,165 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-28",
+  "images": {
+    "hero": {
+      "original": "images/hero-running-tech.jpg",
+      "webp": "images/hero-running-tech.webp",
+      "alt": "专业跑者使用智能跑步技术",
+      "dimensions": "1920x1080",
+      "source": "unsplash",
+      "photographer": "Mārtiņš Zemlickis"
+    },
+    "products": {
+      "smart-insole": {
+        "original": "images/smart-insole-product.png",
+        "webp": "images/smart-insole-product.webp",
+        "alt": "步态精灵智能鞋垫产品图",
+        "dimensions": "800x600",
+        "source": "ai-generated"
+      },
+      "runner-demo": {
+        "original": "images/runner-using-smart-insole.png",
+        "webp": "images/runner-using-smart-insole.webp",
+        "alt": "跑者使用智能鞋垫演示",
+        "dimensions": "1200x800",
+        "source": "ai-generated"
+      }
+    },
+    "features": {
+      "data-analytics": {
+        "original": "images/data-analytics.jpg",
+        "webp": "images/data-analytics.webp",
+        "alt": "数据分析仪表板",
+        "dimensions": "600x400",
+        "source": "unsplash"
+      },
+      "gait-analysis": {
+        "original": "images/gait-analysis.jpg",
+        "webp": "images/gait-analysis.webp",
+        "alt": "步态分析监控屏幕",
+        "dimensions": "600x400",
+        "source": "unsplash"
+      },
+      "realtime-guidance": {
+        "original": "images/realtime-guidance.jpg",
+        "webp": "images/realtime-guidance.webp",
+        "alt": "实时指导功能展示",
+        "dimensions": "600x400",
+        "source": "unsplash"
+      },
+      "visualization": {
+        "original": "images/visualization.jpg",
+        "webp": "images/visualization.webp",
+        "alt": "数据可视化界面",
+        "dimensions": "600x400",
+        "source": "unsplash"
+      },
+      "training-plan": {
+        "original": "images/training-plan.jpg",
+        "webp": "images/training-plan.webp",
+        "alt": "个性化训练计划",
+        "dimensions": "600x400",
+        "source": "unsplash"
+      }
+    },
+    "team": {
+      "professional-team": {
+        "original": "images/professional-team.jpg",
+        "webp": "images/professional-team.webp",
+        "alt": "专业团队合影",
+        "dimensions": "800x600",
+        "source": "company"
+      },
+      "advisors": {
+        "yang-xiaohui": {
+          "original": "images/yang-xiaohui-teacher.png",
+          "webp": "images/yang-xiaohui-teacher.webp",
+          "alt": "杨晓慧教授 - AI与算法顾问",
+          "dimensions": "300x300",
+          "source": "authorized"
+        },
+        "liu-haitao": {
+          "original": "images/liu-haitao-teacher.jpg",
+          "webp": "images/liu-haitao-teacher.webp",
+          "alt": "刘海涛副教授 - 智能硬件与生物力学顾问",
+          "dimensions": "300x300",
+          "source": "authorized"
+        },
+        "liang-shengbin": {
+          "original": "images/liang-shengbin-teacher.jpg",
+          "webp": "images/liang-shengbin-teacher.webp",
+          "alt": "梁胜彬副教授 - 软件工程与大数据顾问",
+          "dimensions": "300x300",
+          "source": "authorized"
+        }
+      }
+    },
+    "icons": {
+      "innovation-novelty": {
+        "file": "images/innovation-novelty.svg",
+        "alt": "技术新颖性图标",
+        "type": "svg",
+        "source": "self-designed"
+      },
+      "innovation-creativity": {
+        "file": "images/innovation-creativity-new.svg",
+        "alt": "技术创造性图标",
+        "type": "svg",
+        "source": "self-designed"
+      },
+      "innovation-utility": {
+        "file": "images/innovation-utility.svg",
+        "alt": "技术实用性图标",
+        "type": "svg",
+        "source": "self-designed"
+      },
+      "edge-cloud-architecture": {
+        "file": "images/edge-cloud-architecture.svg",
+        "alt": "边缘云协同架构图",
+        "type": "svg",
+        "source": "self-designed"
+      },
+      "sensor-system": {
+        "file": "images/sensor-system-diagram.svg",
+        "alt": "传感器系统架构图",
+        "type": "svg",
+        "source": "self-designed"
+      },
+      "st-fusionnet": {
+        "file": "images/st-fusionnet-architecture.svg",
+        "alt": "ST-FusionNet神经网络架构图",
+        "type": "svg",
+        "source": "self-designed"
+      }
+    },
+    "company": {
+      "henu-sports": {
+        "original": "images/henu-sports-school.png",
+        "webp": "images/henu-sports-school.webp",
+        "alt": "河南大学体育学院合作",
+        "dimensions": "400x300",
+        "source": "company"
+      },
+      "location-map": {
+        "original": "images/company-location-map.jpg",
+        "webp": "images/company-location-map.webp",
+        "alt": "公司位置地图",
+        "dimensions": "800x600",
+        "source": "company"
+      }
+    }
+  },
+  "preloadImages": [
+    "images/hero-running-tech.webp",
+    "images/smart-insole-product.webp",
+    "images/runner-using-smart-insole.webp"
+  ],
+  "lazyLoadImages": [
+    "images/data-analytics.webp",
+    "images/gait-analysis.webp",
+    "images/realtime-guidance.webp",
+    "images/visualization.webp",
+    "images/training-plan.webp"
+  ]
+}
