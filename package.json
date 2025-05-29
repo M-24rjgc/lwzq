@@ -4,8 +4,10 @@
   "description": "步态精灵智能跑步姿态分析系统官网",
   "main": "index.html",
   "scripts": {
-    "build": "echo '静态网站构建成功' && exit 0",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node -e \"const fs=require('fs');const path=require('path');if(!fs.existsSync('dist'))fs.mkdirSync('dist');['index.html','contact.html','product.html','team.html','technology.html','css','js','images','assets'].forEach(item=>{if(fs.existsSync(item)){const dest=path.join('dist',item);if(fs.lstatSync(item).isDirectory()){fs.cpSync(item,dest,{recursive:true})}else{fs.copyFileSync(item,dest)}}});console.log('静态网站构建成功')\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "python start-server.py",
+    "optimize": "node scripts/build-optimizer.js"
   },
   "keywords": [
     "步态精灵",
@@ -13,5 +15,11 @@
     "静态网站"
   ],
   "author": "灵维智驱科技有限公司",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "sharp": "^0.33.0",
+    "clean-css": "^5.3.2",
+    "terser": "^5.24.0",
+    "critical": "^5.0.0"
+  }
 }
